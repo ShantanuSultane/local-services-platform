@@ -4,7 +4,7 @@ const App = () => {
   return (
     <div>
       <h1>Hello React</h1>
-      <h1>Hello Github</h1>
+      <h1>Hello Git</h1>
     </div>
   )
 }
