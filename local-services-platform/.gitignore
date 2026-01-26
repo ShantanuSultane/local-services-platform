@@ -22,3 +22,18 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# React build
+build/
+
+# VSCode
+.vscode/
+
+# Env
+.env
