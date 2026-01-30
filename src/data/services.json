@@ -1,0 +1,19 @@
+[
+    {
+      "id": 1,
+      "title": "Home Cleaning",
+      "image": "/assets/cleaning.jpg",
+      "shortDesc": "Full home deep-clean",
+      "fullDesc": "Professional home deep-cleaning service with trained staff.",
+      "price": 499
+    },
+    {
+      "id": 2,
+      "title": "Plumbing",
+      "image": "/assets/plumbing.jpg",
+      "shortDesc": "Fix all plumbing issues",
+      "fullDesc": "Leakage, pipe repair, tap replacement and more.",
+      "price": 299
+    }
+  ]
+  
