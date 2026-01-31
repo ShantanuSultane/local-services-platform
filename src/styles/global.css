@@ -1,0 +1,86 @@
+/* GLOBAL RESETS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background: #f8f9fa;
+  color: #333;
+}
+
+/* MAIN CONTAINER */
+.main-container {
+  padding: 20px 40px;
+  min-height: 80vh;
+}
+
+/* PAGE DEFAULT */
+.page {
+  padding: 20px 0;
+}
+
+.page h1 {
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.page p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+/* FORMS */
+form input,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 12px;
+  font-size: 15px;
+}
+
+form button {
+  width: 150px;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* SERVICE LIST GRID */
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .main-container {
+    padding: 15px;
+  }
+
+  .page h1 {
+    font-size: 26px;
+  }
+}
