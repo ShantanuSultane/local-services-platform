@@ -1,5 +1,5 @@
 import services from "../data/services.json";
-import ServiceCard from "../components/ServiceCard";
+import ServiceCard from "../components/ServiceCard.jsx";
 
 export default function Home() {
   return (

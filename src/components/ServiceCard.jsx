@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./ServiceCard.css";
+import "../styles/components/ServiceCard.css";
 
 export default function ServiceCard({ service }) {
   return (
@@ -7,7 +7,6 @@ export default function ServiceCard({ service }) {
       <img src={service.image} alt={service.title} />
       <h3>{service.title}</h3>
       <p>{service.shortDesc}</p>
-
       <Link className="btn" to={`/services/${service.id}`}>
         View Details
       </Link>
