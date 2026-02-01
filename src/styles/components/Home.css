@@ -1,323 +1,410 @@
-/* ---------------------------
-   GLOBAL PAGE SETTINGS
----------------------------- */
-.home-page {
-  font-family: "Inter", sans-serif;
+/* ---------------------------------------------------------------------
+   GLOBAL SETTINGS
+------------------------------------------------------------------------ */
+.home-advanced {
+  font-family: 'Inter', sans-serif;
   color: #222;
-  line-height: 1.6;
-  padding-bottom: 40px;
+  overflow-x: hidden;
 }
 
 h1, h2, h3 {
   font-weight: 700;
-  color: #111;
 }
 
 section {
-  margin: 60px auto;
-  max-width: 1250px;
-  padding: 0 20px;
+  padding: 80px 20px;
+  max-width: 1300px;
+  margin: auto;
 }
 
 
 
-/* ---------------------------
-   HERO SECTION
----------------------------- */
-.hero {
+/* ---------------------------------------------------------------------
+   HERO SECTION (Glassmorphism + Overlay)
+------------------------------------------------------------------------ */
+.hero-advanced {
+  position: relative;
+  height: 85vh;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
-  padding: 80px 20px;
-  background: linear-gradient(135deg, #eef3ff, #ffffff);
-  border-radius: 20px;
+  justify-content: center;
+  color: white;
+  overflow: hidden;
+  border-radius: 0 0 40px 40px;
+  background: url("/assets/hero-bg.jpg") center/cover;
 }
 
-.hero-content {
-  flex: 1;
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.2)
+  );
 }
 
-.hero h1 {
-  font-size: 42px;
-  margin-bottom: 15px;
+.hero-container {
+  position: relative;
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
 }
 
-.hero p {
-  font-size: 17px;
-  color: #555;
+.hero-container h1 {
+  font-size: 50px;
+  line-height: 1.2;
 }
 
-.search-box {
-  margin-top: 20px;
+.hero-container h1 span {
+  display: block;
+  font-size: 56px;
+  background: linear-gradient(90deg, #8ab4ff, #b4f0ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-top: 8px;
+}
+
+.hero-sub {
+  margin-top: 15px;
+  font-size: 18px;
+  color: #e6e6e6;
+}
+
+
+
+/* Search Box */
+.hero-search {
+  margin-top: 25px;
   display: flex;
-  gap: 10px;
+  justify-content: center;
+  gap: 12px;
 }
 
-.search-box input {
-  width: 65%;
-  padding: 12px 15px;
-  border: 2px solid #d8dfff;
-  border-radius: 10px;
+.hero-search input {
+  width: 50%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
   font-size: 16px;
-  transition: 0.3s;
-}
-
-.search-box input:focus {
-  border-color: #4a6cf7;
   outline: none;
 }
 
-.search-box button {
+.hero-search input::placeholder {
+  color: #e1e1e1;
+}
+
+.hero-search button {
+  padding: 14px 28px;
   background: #4a6cf7;
-  color: white;
   border: none;
-  padding: 12px 18px;
-  border-radius: 10px;
+  font-size: 16px;
+  border-radius: 14px;
   cursor: pointer;
   transition: 0.3s;
+  color: white;
 }
 
-.search-box button:hover {
-  background: #2f52d6;
+.hero-search button:hover {
+  background: #2c4ed1;
 }
 
-.hero-note {
-  margin-top: 10px;
-  font-size: 14px;
+
+
+/* Hero Stats */
+.hero-stats {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.hero-stats div {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(12px);
+  padding: 20px 30px;
+  border-radius: 16px;
+}
+
+.hero-stats h3 {
+  font-size: 28px;
+  color: #fff;
+}
+
+
+
+/* ---------------------------------------------------------------------
+   FEATURES SECTION (Curved Background)
+------------------------------------------------------------------------ */
+.features {
+  position: relative;
+  margin-top: -40px;
+  background: #f5f8ff;
+  border-radius: 40px;
+  padding-top: 100px;
+}
+
+.features h2 {
+  text-align: center;
+  font-size: 36px;
+}
+
+.features-grid {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.feature-box {
+  background: white;
+  padding: 30px;
+  text-align: center;
+  border-radius: 18px;
+  border: 1px solid #ededed;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.feature-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+}
+
+
+
+/* ---------------------------------------------------------------------
+   TRENDING CATEGORIES (Banner Slider Style)
+------------------------------------------------------------------------ */
+.categories-advanced h2 {
+  text-align: center;
+  font-size: 36px;
+}
+
+.categories-advanced .sub {
+  text-align: center;
+  margin-top: 5px;
   color: #666;
 }
 
-.hero-img img {
-  width: 450px;
+.category-slider {
+  margin-top: 40px;
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.cat-box {
+  min-width: 340px;
+  height: 210px;
   border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  scroll-snap-align: start;
+  transition: 0.3s;
+}
+
+.cat-box img {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
-
-
-/* ---------------------------
-   POPULAR CATEGORIES
----------------------------- */
-.categories h2 {
-  text-align: center;
-  font-size: 32px;
+.cat-box:hover {
+  transform: scale(1.03);
 }
 
-.category-list {
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-.category-card {
-  width: 140px;
-  text-align: center;
-  padding: 25px 20px;
-  background: #f7f9ff;
-  border-radius: 14px;
-  transition: 0.3s;
-  cursor: pointer;
-  border: 1px solid transparent;
-}
-
-.category-card img {
-  width: 55px;
-  margin-bottom: 10px;
-}
-
-.category-card:hover {
-  transform: translateY(-5px);
-  border-color: #d7ddff;
-  background: #eef2ff;
-}
-
-
-
-/* ---------------------------
-   SERVICES SECTION
----------------------------- */
-.services h2 {
-  text-align: center;
-  font-size: 32px;
-}
-
-.services-grid {
-  margin-top: 35px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
-}
-
-.view-all {
-  text-align: center;
-  margin-top: 25px;
-}
-
-.btn-view-all {
-  padding: 12px 22px;
-  background: #4a6cf7;
+.cat-info {
+  position: absolute;
+  bottom: 0;
+  padding: 18px;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(0,0,0,0.7), transparent);
   color: white;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: 0.3s;
 }
 
-.btn-view-all:hover {
-  background: #2f52d6;
+.cat-info h3 {
+  font-size: 20px;
 }
 
-
-
-/* ---------------------------
-   WHY CHOOSE US
----------------------------- */
-.why-us h2 {
-  text-align: center;
-  font-size: 32px;
-}
-
-.why-grid {
-  margin-top: 35px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 25px;
-}
-
-.why-card {
-  background: white;
-  padding: 25px;
-  border-radius: 14px;
-  border: 1px solid #eee;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.why-card img {
-  width: 55px;
-  margin-bottom: 10px;
-}
-
-.why-card:hover {
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.06);
-  transform: translateY(-6px);
-}
-
-
-
-/* ---------------------------
-   TESTIMONIALS
----------------------------- */
-.testimonials h2 {
-  text-align: center;
-  font-size: 32px;
-}
-
-.testimonial-list {
-  margin-top: 30px;
-  display: flex;
-  gap: 25px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.testimonial-card {
-  width: 330px;
-  background: #f9faff;
-  padding: 25px;
-  border-radius: 14px;
-  border-left: 5px solid #4a6cf7;
-  transition: 0.3s;
-}
-
-.testimonial-card:hover {
-  background: #eef2ff;
-}
-
-.testimonial-card p {
-  font-style: italic;
-  color: #555;
-}
-
-.testimonial-card h4 {
-  margin-top: 12px;
-  color: #111;
-}
-
-
-
-/* ---------------------------
-   CTA SECTION
----------------------------- */
-.cta {
-  background: linear-gradient(135deg, #4a6cf7, #263fce);
-  color: white;
-  padding: 70px 20px;
-  text-align: center;
-  border-radius: 20px;
-  margin-top: 80px;
-}
-
-.cta-buttons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-
-.download-btn,
-.cta-explore {
-  background: white;
-  color: #263fce;
-  padding: 12px 24px;
-  border-radius: 10px;
+.cat-info a {
+  color: #9cd6ff;
   text-decoration: none;
   font-weight: 600;
+}
+
+
+
+/* ---------------------------------------------------------------------
+   POPULAR SERVICES (Modern Grid)
+------------------------------------------------------------------------ */
+.services-advanced h2 {
+  text-align: center;
+  font-size: 36px;
+}
+
+.services-grid-adv {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.center {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn-large {
+  padding: 16px 32px;
+  background: #4a6cf7;
+  color: white;
+  font-size: 17px;
+  border-radius: 14px;
+  text-decoration: none;
   transition: 0.3s;
 }
 
-.cta-explore {
-  background: #f6f7ff;
-}
-
-.download-btn:hover,
-.cta-explore:hover {
-  background: #dfe2ff;
+.btn-large:hover {
+  background: #2d4fdd;
 }
 
 
 
-/* ---------------------------
+/* ---------------------------------------------------------------------
+   REVIEWS SECTION (Glass Cards)
+------------------------------------------------------------------------ */
+.reviews-advanced h2 {
+  text-align: center;
+  font-size: 36px;
+}
+
+.review-slider {
+  margin-top: 40px;
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+}
+
+.review-card {
+  min-width: 360px;
+  padding: 30px;
+  background: rgba(255,255,255,0.5);
+  backdrop-filter: blur(15px);
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #333;
+  scroll-snap-align: start;
+}
+
+.review-card p {
+  font-style: italic;
+  color: #444;
+}
+
+.review-card h4 {
+  margin-top: 15px;
+  font-weight: 700;
+}
+
+
+
+/* ---------------------------------------------------------------------
+   DOWNLOAD CTA (Premium Layout)
+------------------------------------------------------------------------ */
+.download-advanced {
+  margin-top: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #4a6cf7, #9aa9ff);
+  padding: 70px 40px;
+  border-radius: 30px;
+  color: white;
+}
+
+.download-content {
+  max-width: 550px;
+}
+
+.download-content h2 {
+  font-size: 40px;
+}
+
+.download-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+}
+
+.app-btn {
+  padding: 14px 26px;
+  background: white;
+  color: #4a6cf7;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.app-outline {
+  padding: 14px 26px;
+  border: 2px solid white;
+  color: white;
+  border-radius: 14px;
+  text-decoration: none;
+}
+
+.download-img img {
+  width: 300px;
+}
+
+
+
+/* ---------------------------------------------------------------------
    RESPONSIVE DESIGN
----------------------------- */
+------------------------------------------------------------------------ */
 
 @media (max-width: 900px) {
-  .hero {
+  .download-advanced {
     flex-direction: column;
     text-align: center;
   }
 
-  .hero-img img {
-    width: 80%;
+  .download-img img {
+    margin-top: 20px;
   }
 
-  .search-box {
-    flex-direction: column;
+  .hero-advanced {
+    height: 70vh;
   }
 
-  .search-box input {
-    width: 100%;
+  .hero-container h1 {
+    font-size: 38px;
   }
 }
 
 @media (max-width: 600px) {
-  .hero h1 {
-    font-size: 32px;
+  .hero-container h1 {
+    font-size: 34px;
   }
 
-  section {
-    padding: 0 15px;
+  .hero-search {
+    flex-direction: column;
+  }
+
+  .hero-search input {
+    width: 100%;
+  }
+
+  .download-img img {
+    width: 220px;
   }
 }

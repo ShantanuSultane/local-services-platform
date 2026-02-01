@@ -1,148 +1,179 @@
 import { Link } from "react-router-dom";
 import services from "../data/services.json";
-import ServiceCard from "../components/ServiceCard.jsx";
+import ServiceCard from "../components/ServiceCard";
 import "../styles/components/Home.css";
 
 export default function Home() {
   return (
-    <div className="home-page">
+    <div className="home-advanced">
 
-      {/* ---------------- Hero Section ---------------- */}
-      <section className="hero">
-        <div className="hero-content">
-          <h1>Your Trusted Local Services Platform</h1>
-          <p>Book professional home services with ease — fast, safe, and affordable.</p>
+      {/* ---------------- Premium Hero Section ---------------- */}
+      <section className="hero-advanced">
+        <div className="hero-overlay"></div>
 
-          <div className="search-box">
-            <input type="text" placeholder="Search for cleaning, plumbing, repairs..." />
+        <div className="hero-container">
+          <h1>
+            Local Home Services  
+            <span>Delivered Professionally.</span>
+          </h1>
+
+          <p className="hero-sub">
+            Trusted experts for cleaning, repairs, beauty, and more —  
+            book services instantly with guaranteed quality.
+          </p>
+
+          <div className="hero-search">
+            <input type="text" placeholder="Search for services (cleaning, AC repair, salon...)" />
             <button>Search</button>
           </div>
 
-          <p className="hero-note">100+ verified service experts in your city.</p>
-        </div>
+          <div className="hero-stats">
+            <div>
+              <h3>50K+</h3>
+              <p>Happy Customers</p>
+            </div>
 
-        <div className="hero-img">
-          <img src="/assets/hero.png" alt="Local services" />
-        </div>
-      </section>
+            <div>
+              <h3>1200+</h3>
+              <p>Verified Experts</p>
+            </div>
 
-
-
-      {/* ---------------- Popular Categories ---------------- */}
-      <section className="categories">
-        <h2>Popular Categories</h2>
-
-        <div className="category-list">
-          <div className="category-card">
-            <img src="/assets/icons/cleaning.png" alt="" />
-            <p>Cleaning</p>
-          </div>
-
-          <div className="category-card">
-            <img src="/assets/icons/plumbing.png" alt="" />
-            <p>Plumbing</p>
-          </div>
-
-          <div className="category-card">
-            <img src="/assets/icons/electrician.png" alt="" />
-            <p>Electrician</p>
-          </div>
-
-          <div className="category-card">
-            <img src="/assets/icons/salon.png" alt="" />
-            <p>Beauty & Salon</p>
+            <div>
+              <h3>98%</h3>
+              <p>Positive Ratings</p>
+            </div>
           </div>
         </div>
       </section>
 
 
 
-      {/* ---------------- Services Section ---------------- */}
-      <section className="services">
-        <h2>Top Booked Services</h2>
+      {/* ---------------- Curved Feature Section ---------------- */}
+      <section className="features">
+        <h2>All Home Services in One Platform</h2>
 
-        <div className="services-grid">
-          {services.slice(0, 6).map((item) => (
+        <div className="features-grid">
+          <div className="feature-box">
+            <img src="/assets/icons/shield.png" alt="verified" />
+            <h3>Safe & Verified Experts</h3>
+            <p>Background checked professionals with high service ratings.</p>
+          </div>
+
+          <div className="feature-box">
+            <img src="/assets/icons/time.png" alt="fast" />
+            <h3>Instant Booking</h3>
+            <p>Book any service within seconds, anytime.</p>
+          </div>
+
+          <div className="feature-box">
+            <img src="/assets/icons/warranty.png" alt="warranty" />
+            <h3>Service Warranty</h3>
+            <p>Free 7-day service warranty for selected categories.</p>
+          </div>
+
+          <div className="feature-box">
+            <img src="/assets/icons/support.png" alt="support" />
+            <h3>24/7 Customer Support</h3>
+            <p>We are available to assist you round the clock.</p>
+          </div>
+        </div>
+      </section>
+
+
+
+      {/* ---------------- Trending Categories ---------------- */}
+      <section className="categories-advanced">
+        <h2>Trending Home Services</h2>
+        <p className="sub">Book our most loved and highly rated services</p>
+
+        <div className="category-slider">
+
+          <div className="cat-box">
+            <img src="/assets/banners/cleaning.jpg" />
+            <div className="cat-info">
+              <h3>Deep Home Cleaning</h3>
+              <Link to="/services">Book Now →</Link>
+            </div>
+          </div>
+
+          <div className="cat-box">
+            <img src="/assets/banners/electrician.jpg" />
+            <div className="cat-info">
+              <h3>Electrician Repair</h3>
+              <Link to="/services">Book Now →</Link>
+            </div>
+          </div>
+
+          <div className="cat-box">
+            <img src="/assets/banners/plumber.jpg" />
+            <div className="cat-info">
+              <h3>Plumbing & Fixing</h3>
+              <Link to="/services">Book Now →</Link>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+
+      {/* ---------------- Popular Services ---------------- */}
+      <section className="services-advanced">
+        <h2>Popular Services Near You</h2>
+
+        <div className="services-grid-adv">
+          {services.slice(0, 8).map((item) => (
             <ServiceCard key={item.id} service={item} />
           ))}
         </div>
 
-        <div className="view-all">
-          <Link to="/services" className="btn-view-all">View All Services</Link>
+        <div className="center">
+          <Link to="/services" className="btn-large">
+            View All Services
+          </Link>
         </div>
       </section>
 
 
 
-      {/* ---------------- Why Choose Us ---------------- */}
-      <section className="why-us">
-        <h2>Why Choose Us?</h2>
-
-        <div className="why-grid">
-
-          <div className="why-card">
-            <img src="/assets/icons/verified.png" alt="" />
-            <h3>Verified Professionals</h3>
-            <p>All experts go through background checks and verifications.</p>
-          </div>
-
-          <div className="why-card">
-            <img src="/assets/icons/quality.png" alt="" />
-            <h3>High Quality Service</h3>
-            <p>We guarantee excellent service experience and satisfaction.</p>
-          </div>
-
-          <div className="why-card">
-            <img src="/assets/icons/support.png" alt="" />
-            <h3>24/7 Support</h3>
-            <p>We assist you anytime with your booking queries.</p>
-          </div>
-
-          <div className="why-card">
-            <img src="/assets/icons/secure.png" alt="" />
-            <h3>Secure Payments</h3>
-            <p>Pay securely with UPI, cards, or cash after service.</p>
-          </div>
-
-        </div>
-      </section>
-
-
-
-      {/* ---------------- Testimonials ---------------- */}
-      <section className="testimonials">
+      {/* ---------------- Testimonial Premium ---------------- */}
+      <section className="reviews-advanced">
         <h2>What Customers Say</h2>
 
-        <div className="testimonial-list">
-
-          <div className="testimonial-card">
-            <p>"Best cleaning service I ever booked. Fast and neat work!"</p>
-            <h4>— Priya Sharma</h4>
+        <div className="review-slider">
+          <div className="review-card">
+            <p>“Amazing service! The deep cleaning team was professional and fast.”</p>
+            <h4>— Shruti Patil</h4>
           </div>
 
-          <div className="testimonial-card">
-            <p>"Electrician arrived on time and solved the issue properly."</p>
-            <h4>— Rohan Patil</h4>
+          <div className="review-card">
+            <p>“I booked an electrician at 10 PM — he arrived within 20 minutes!”</p>
+            <h4>— Harshal Jadhav</h4>
           </div>
 
-          <div className="testimonial-card">
-            <p>"Reliable platform with affordable prices. Loved it."</p>
-            <h4>— Sneha Kulkarni</h4>
+          <div className="review-card">
+            <p>“Affordable pricing and top service quality. Highly recommended.”</p>
+            <h4>— Monika Deshmukh</h4>
           </div>
-
         </div>
       </section>
 
 
 
-      {/* ---------------- Download App / CTA ---------------- */}
-      <section className="cta">
-        <h2>Book Services Anytime, Anywhere</h2>
-        <p>Get our app for faster booking and exclusive discounts!</p>
+      {/* ---------------- App Download CTA ---------------- */}
+      <section className="download-advanced">
+        <div className="download-content">
+          <h2>Book Services Faster on the App</h2>
+          <p>Exclusive discounts, live tracking & priority support in the app.</p>
 
-        <div className="cta-buttons">
-          <button className="download-btn">Download App</button>
-          <Link to="/services" className="cta-explore">Explore Services</Link>
+          <div className="download-buttons">
+            <button className="app-btn">Download App</button>
+            <Link to="/services" className="app-outline">Explore Services</Link>
+          </div>
+        </div>
+
+        <div className="download-img">
+          <img src="/assets/phone-app.png" alt="App" />
         </div>
       </section>
 

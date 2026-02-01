@@ -1,16 +1,33 @@
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
 import "../styles/components/Navbar.css";
+import { FaBars, FaTimes } from "react-icons/fa";
 
-export default function Navbar() {
+const Navbar = () => {
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMobileOpen(!mobileOpen);
+  };
+
   return (
-    <nav className="nav">
-      <h2 className="logo">Local Services</h2>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/services">Services</Link></li>
-        <li><Link to="/about">About</Link></li>
-        <li><Link to="/contact">Contact</Link></li>
-      </ul>
-    </nav>
+    <header className="navbar-container">
+      <div className="navbar">
+        <div className="logo">Local<span>Services</span></div>
+
+        <ul className={mobileOpen ? "nav-links active" : "nav-links"}>
+          <li><a href="/">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/providers">Providers</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><button className="btn-primary">Login</button></li>
+        </ul>
+
+        <div className="mobile-icon" onClick={toggleMenu}>
+          {mobileOpen ? <FaTimes /> : <FaBars />}
+        </div>
+      </div>
+    </header>
   );
-}
+};
+
+export default Navbar;
