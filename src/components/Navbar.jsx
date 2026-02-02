@@ -1,8 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/components/Navbar.css";
 import { FaBars, FaTimes } from "react-icons/fa";
 
+
 const Navbar = () => {
+
+
+  
   const [mobileOpen, setMobileOpen] = useState(false);
 
   const toggleMenu = () => {

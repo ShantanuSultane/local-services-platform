@@ -19,352 +19,710 @@ section {
 
 
 
-/* ---------------------------------------------------------------------
-   HERO SECTION (Glassmorphism + Overlay)
------------------------------------------------------------------------- */
-.hero-advanced {
+/* ---------------------------------------------------------------
+   CLEAN PREMIUM HERO (Background Image + Overlay + Glass UI)
+---------------------------------------------------------------- */
+
+/* -----------------------------------------------------
+   ANIMATED PREMIUM HERO 
+------------------------------------------------------ */
+
+/* -----------------------------------------------------
+   HERO FINAL — Premium, Animated, Background Image
+------------------------------------------------------ */
+
+.hero-final2 {
   position: relative;
   height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 6%;
   color: white;
   overflow: hidden;
-  border-radius: 0 0 40px 40px;
-  background: url("/assets/hero-bg.jpg") center/cover;
+  border-radius: 20px;
+  background: url("/assets/herobg.png") center/cover no-repeat;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    135deg,
-    rgba(0, 0, 0, 0.6),
-    rgba(0, 0, 0, 0.2)
-  );
+  background: linear-gradient(135deg, rgba(0,0,0,0.55), rgba(0,0,0,0.25));
+  z-index: 0;
 }
 
-.hero-container {
+.hero-inner {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 40px;
   position: relative;
-  text-align: center;
-  max-width: 800px;
-  padding: 20px;
+  z-index: 1;
 }
 
-.hero-container h1 {
-  font-size: 50px;
+/* Left */
+.hero-left { width: 55%; }
+.hero-left h1 {
+  font-size: 48px;
+  font-weight: 800;
   line-height: 1.2;
 }
-
-.hero-container h1 span {
+.hero-left h1 span {
   display: block;
-  font-size: 56px;
-  background: linear-gradient(90deg, #8ab4ff, #b4f0ff);
+  background: linear-gradient(90deg, #6aa8ff, #b4faff);
   -webkit-background-clip: text;
   color: transparent;
-  margin-top: 8px;
 }
+.hero-text { margin-top: 16px; font-size: 18px; line-height: 1.6; color: #ececec; max-width: 90%; }
 
-.hero-sub {
-  margin-top: 15px;
-  font-size: 18px;
-  color: #e6e6e6;
-}
-
-
-
-/* Search Box */
-.hero-search {
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-
-.hero-search input {
-  width: 50%;
-  padding: 14px 16px;
+/* Search */
+.hero-search-box { margin-top: 28px; display: flex; gap: 12px; }
+.hero-search-box input {
+  width: 65%;
+  padding: 14px 18px;
   border-radius: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  background: rgba(246, 240, 240, 0.908);
   backdrop-filter: blur(12px);
-  background: rgba(255, 255, 255, 0.2);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: rgba(0, 0, 0, 0.793);
+}
+.hero-search-box button {
+  padding: 14px 26px;
+  border-radius: 14px;
+  background: #4a6cf7;
   color: white;
   font-size: 16px;
-  outline: none;
-}
-
-.hero-search input::placeholder {
-  color: #e1e1e1;
-}
-
-.hero-search button {
-  padding: 14px 28px;
-  background: #4a6cf7;
   border: none;
-  font-size: 16px;
-  border-radius: 14px;
   cursor: pointer;
   transition: 0.3s;
-  color: white;
 }
+.hero-search-box button:hover { background: #2b4fd8; transform: translateY(-2px); }
 
-.hero-search button:hover {
-  background: #2c4ed1;
-}
-
-
-
-/* Hero Stats */
-.hero-stats {
-  margin-top: 40px;
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-}
-
-.hero-stats div {
-  background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(12px);
-  padding: 20px 30px;
+/* Floating Stats */
+.hero-stats-floating { margin-top: 36px; display: flex; gap: 20px; }
+.float-card {
+  padding: 16px 24px;
+  background: rgba(255,255,255,0.14);
   border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.2);
+  text-align: center;
+  animation: float 4s ease-in-out infinite;
+}
+.float-card:nth-child(2) { animation-delay: 0.7s; }
+.float-card:nth-child(3) { animation-delay: 1.2s; }
+.float-card h3 { font-size: 26px; margin-bottom: 4px; }
+.float-card p { font-size: 14px; color: #e0e0e0; }
+
+/* Right Premium Section */
+.hero-right-section {
+  width: 35%;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  padding: 28px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeIn 1.5s ease forwards;
 }
 
-.hero-stats h3 {
-  font-size: 28px;
+.hero-right-section h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
   color: #fff;
 }
 
+.hero-right-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.hero-right-section ul li {
+  font-size: 14px;
+  color: #e6e6e6;
+  line-height: 1.5;
+}
+
+.hero-right-section ul li strong { color: #fff; }
+
+.hero-right-section .cta-btn {
+  margin-top: 16px;
+  padding: 12px 22px;
+  background: #4a6cf7;
+  border: none;
+  border-radius: 14px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.hero-right-section .cta-btn:hover {
+  background: #2b4fd8;
+  transform: translateY(-2px);
+}
+
+/* Animations */
+@keyframes float { 0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);} }
+.fade-up { animation: fadeIn 1s ease forwards; }
+.fade-up-delay { animation: fadeIn 1.3s ease forwards; }
+.slide-up { animation: fadeIn 1.6s ease forwards; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);} }
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-inner{flex-direction:column;text-align:center;gap:40px;}
+  .hero-left,.hero-right-section{width:100%;}
+  .hero-search-box{flex-direction:column;}
+  .hero-search-box input{width:100%;}
+}
 
 
-/* ---------------------------------------------------------------------
-   FEATURES SECTION (Curved Background)
------------------------------------------------------------------------- */
+
+
+
+
+
+/* -------------------------------
+   FEATURES SECTION (ADVANCED)
+--------------------------------*/
+
 .features {
+  width: 100%;
+  padding: 80px 6%;
+  background: #f9fbff;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 55px;
+  color: #222;
   position: relative;
-  margin-top: -40px;
-  background: #f5f8ff;
-  border-radius: 40px;
-  padding-top: 100px;
 }
 
-.features h2 {
-  text-align: center;
-  font-size: 36px;
+.section-title::after {
+  content: "";
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #00d4ff, #0077ff);
+  display: block;
+  margin: 15px auto 0;
+  border-radius: 2px;
 }
 
+/* Feature Grid */
 .features-grid {
-  margin-top: 50px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 35px;
 }
 
+/* Feature Box */
 .feature-box {
-  background: white;
-  padding: 30px;
-  text-align: center;
-  border-radius: 18px;
-  border: 1px solid #ededed;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  background: #fff;
+  padding: 35px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: 0.35s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
 .feature-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+  transform: translateY(-10px);
+  box-shadow: 0 12px 40px rgba(0, 120, 255, 0.22);
+}
+
+/* Icon Circle */
+.icon-circle {
+  width: 75px;
+  height: 75px;
+  margin: 0 auto 22px;
+  background: linear-gradient(135deg, #e9f7ff, #dbefff);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s ease;
+  box-shadow: 0 6px 18px rgba(0, 140, 255, 0.18);
+}
+
+.feature-box:hover .icon-circle {
+  transform: scale(1.15) rotate(6deg);
+}
+
+.icon-circle img {
+  width: 90px;
+  height: 90px;
+}
+
+/* Text */
+.feature-box h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.feature-box p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0 auto;
+  max-width: 260px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .feature-box {
+    padding: 28px 20px;
+  }
+
+  .icon-circle {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon-circle img {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 
 
-/* ---------------------------------------------------------------------
-   TRENDING CATEGORIES (Banner Slider Style)
------------------------------------------------------------------------- */
-.categories-advanced h2 {
+
+/* -------------------------------
+   TRENDING CATEGORIES (ADVANCED)
+--------------------------------*/
+
+.categories-advanced {
+  padding: 80px 6%;
+  background: #fff;
   text-align: center;
-  font-size: 36px;
+}
+
+.categories-advanced .section-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
 .categories-advanced .sub {
-  text-align: center;
-  margin-top: 5px;
+  font-size: 1.1rem;
   color: #666;
+  margin-bottom: 50px;
 }
 
+/* Slider / Grid */
 .category-slider {
-  margin-top: 40px;
   display: flex;
-  gap: 22px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  scroll-snap-type: x mandatory;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 
+/* Category Box */
 .cat-box {
-  min-width: 340px;
-  height: 210px;
-  border-radius: 20px;
-  overflow: hidden;
   position: relative;
+  border-radius: 16px;
+  overflow: hidden;
   cursor: pointer;
-  scroll-snap-align: start;
-  transition: 0.3s;
+  height: 250px;
+  transition: 0.4s ease;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .cat-box img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.cat-box:hover {
-  transform: scale(1.03);
+/* Zoom effect */
+.cat-box:hover img {
+  transform: scale(1.12);
 }
 
+/* Overlay for glass-effect content */
 .cat-info {
   position: absolute;
   bottom: 0;
-  padding: 18px;
+  left: 0;
   width: 100%;
-  background: linear-gradient(0deg, rgba(0,0,0,0.7), transparent);
-  color: white;
+  padding: 18px;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  text-align: left;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: 0.35s ease;
+}
+
+/* Show on hover */
+.cat-box:hover .cat-info {
+  transform: translateY(0px);
+  opacity: 1;
 }
 
 .cat-info h3 {
-  font-size: 20px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 5px;
 }
 
 .cat-info a {
-  color: #9cd6ff;
-  text-decoration: none;
+  color: #00d4ff;
   font-weight: 600;
-}
-
-
-
-/* ---------------------------------------------------------------------
-   POPULAR SERVICES (Modern Grid)
------------------------------------------------------------------------- */
-.services-advanced h2 {
-  text-align: center;
-  font-size: 36px;
-}
-
-.services-grid-adv {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-}
-
-.center {
-  text-align: center;
-  margin-top: 30px;
-}
-
-.btn-large {
-  padding: 16px 32px;
-  background: #4a6cf7;
-  color: white;
-  font-size: 17px;
-  border-radius: 14px;
   text-decoration: none;
   transition: 0.3s;
 }
 
-.btn-large:hover {
-  background: #2d4fdd;
+.cat-info a:hover {
+  color: #fff;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .cat-box {
+    height: 210px;
+  }
+
+  .cat-info h3 {
+    font-size: 1.15rem;
+  }
 }
 
 
 
-/* ---------------------------------------------------------------------
-   REVIEWS SECTION (Glass Cards)
------------------------------------------------------------------------- */
-.reviews-advanced h2 {
+
+/* ----------------------------------
+   POPULAR SERVICES (ADVANCED)
+-----------------------------------*/
+
+.services-advanced {
+  padding: 80px 6%;
+  background: #f8fbff;
   text-align: center;
-  font-size: 36px;
 }
 
-.review-slider {
-  margin-top: 40px;
-  display: flex;
-  gap: 25px;
-  overflow-x: auto;
-  padding-bottom: 10px;
+.services-advanced .section-title {
+  font-size: 2.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
-.review-card {
-  min-width: 360px;
-  padding: 30px;
-  background: rgba(255,255,255,0.5);
-  backdrop-filter: blur(15px);
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.3);
-  color: #333;
-  scroll-snap-align: start;
+.services-advanced .section-sub {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 50px;
 }
 
-.review-card p {
-  font-style: italic;
-  color: #444;
+/* Service grid layout */
+.services-grid-adv {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 28px;
+  margin-bottom: 50px;
 }
 
-.review-card h4 {
-  margin-top: 15px;
+/* View All Button */
+.center {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-large {
+  padding: 14px 32px;
+  background: linear-gradient(90deg, #00d4ff, #0077ff);
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.btn-large:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 140, 255, 0.4);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services-grid-adv {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+  }
+
+  .btn-large {
+    font-size: 1rem;
+  }
+}
+
+
+
+/* --------------------------------
+   TESTIMONIALS (PREMIUM ADVANCED)
+----------------------------------*/
+
+.reviews-advanced {
+  padding: 80px 6%;
+  background: #ffffff;
+  text-align: center;
+}
+
+.reviews-advanced .section-title {
+  font-size: 2.3rem;
   font-weight: 700;
 }
 
+.reviews-advanced .section-sub {
+  margin-top: 8px;
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 50px;
+}
+
+/* Review Slider Layout */
+.review-slider {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 10px 0;
+}
+
+/* Review Card */
+.review-card {
+  background: #f8fbff;
+  padding: 28px;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0, 80, 255, 0.12);
+  border: 1px solid rgba(0, 0, 120, 0.06);
+  position: relative;
+  transition: 0.35s ease;
+  text-align: left;
+}
+
+.review-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 120, 255, 0.22);
+  background: #ffffff;
+}
+
+.review-card p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+.review-card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #0070ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .review-card {
+    padding: 22px;
+  }
+  .review-card p {
+    font-size: 0.95rem;
+  }
+}
 
 
-/* ---------------------------------------------------------------------
-   DOWNLOAD CTA (Premium Layout)
------------------------------------------------------------------------- */
+
+
+/* ============================
+   App Download CTA - Premium
+=============================*/
 .download-advanced {
-  margin-top: 90px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: linear-gradient(135deg, #4a6cf7, #9aa9ff);
-  padding: 70px 40px;
+  padding: 70px 10%;
+  background: linear-gradient(145deg, #ffffff, #f3f7ff);
   border-radius: 30px;
-  color: white;
+  margin: 70px auto;
+  gap: 40px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.06);
 }
 
+/* ----- Left Content ----- */
 .download-content {
-  max-width: 550px;
+  flex: 1;
 }
 
-.download-content h2 {
-  font-size: 40px;
+.download-advanced h2 {
+  font-size: 2.7rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #1b1b1b;
 }
 
-.download-buttons {
-  margin-top: 20px;
+.download-advanced p {
+  font-size: 1.15rem;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* Highlight Points */
+.app-features {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0;
+}
+
+.app-features li {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: #222;
   display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px dashed #dde3ef;
+}
+
+.app-features li:last-child {
+  border-bottom: none;
+}
+
+/* ----- Buttons ----- */
+.download-buttons {
+  display: flex;
+  align-items: center;
   gap: 15px;
+  margin-top: 25px;
 }
 
 .app-btn {
-  padding: 14px 26px;
-  background: white;
-  color: #4a6cf7;
-  border-radius: 14px;
+  background: linear-gradient(135deg, #0066ff, #003db5);
+  color: #fff;
   border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 1.05rem;
   cursor: pointer;
+  transition: 0.3s;
   font-weight: 600;
 }
 
+.app-btn:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, #0052d4, #002c8f);
+  box-shadow: 0 8px 25px rgba(0, 102, 255, 0.25);
+}
+
 .app-outline {
-  padding: 14px 26px;
-  border: 2px solid white;
-  color: white;
-  border-radius: 14px;
+  padding: 13px 25px;
+  border-radius: 12px;
+  border: 2px solid #1a73e8;
+  background: transparent;
+  color: #1a73e8;
+  font-size: 1.05rem;
   text-decoration: none;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.app-outline:hover {
+  background: #1a73e8;
+  color: #fff;
+  transform: translateY(-4px);
+}
+
+/* ----- Trust Badges ----- */
+.trust-box {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.trust-box span {
+  background: rgba(0, 102, 255, 0.08);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: #003a99;
+  font-weight: 500;
+  border: 1px solid rgba(0, 102, 255, 0.15);
+  transition: 0.3s;
+}
+
+.trust-box span:hover {
+  background: rgba(0, 102, 255, 0.18);
+  transform: scale(1.05);
+}
+
+/* ----- Phone Image ----- */
+.download-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
 .download-img img {
-  width: 300px;
+  width: 90%;
+  max-width: 380px;
+  animation: floatPhone 3s ease-in-out infinite;
 }
+
+/* Phone Floating Animation */
+@keyframes floatPhone {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* ============================
+   Responsive
+=============================*/
+@media (max-width: 968px) {
+  .download-advanced {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 8%;
+  }
+
+  .download-buttons {
+    justify-content: center;
+  }
+
+  .app-features li {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .download-advanced h2 {
+    font-size: 2rem;
+  }
+
+  .download-img img {
+    max-width: 300px;
+  }
+}
+
 
 
 
@@ -372,7 +730,7 @@ section {
    RESPONSIVE DESIGN
 ------------------------------------------------------------------------ */
 
-@media (max-width: 900px) {
+/* @media (max-width: 900px) {
   .download-advanced {
     flex-direction: column;
     text-align: center;
@@ -407,4 +765,4 @@ section {
   .download-img img {
     width: 220px;
   }
-}
+}  */

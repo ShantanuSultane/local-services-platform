@@ -1,138 +1,151 @@
-/* ===========================
-   UPDATED NAVBAR: LIGHT PREMIUM LOOK
-=========================== */
+/* =====================================
+        NAVBAR CONTAINER
+   ===================================== */
+
 .navbar-container {
-  position: sticky;
-  top: 0;
   width: 100%;
-  z-index: 2000;
-
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.75),
-    rgba(240, 245, 255, 0.7)
-  );
-  backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(180, 180, 180, 0.25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  backdrop-filter: blur(18px);
+  background: rgba(0, 0, 0, 0.65); /* fixed color */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  transition: all 0.3s ease;
 }
 
-/* ------------------------
-   NAVBAR BASE LAYOUT
-------------------------- */
+/* =====================================
+        NAVBAR CONTENT
+   ===================================== */
 .navbar {
-  max-width: 1350px;
+  max-width: 1300px;
   margin: auto;
-  padding: 14px 40px;
+  padding: 12px 40px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
-/* ------------------------
-   LOGO STYLE (NEW)
-------------------------- */
+/* =====================================
+                LOGO
+   ===================================== */
 .logo {
-  font-size: 30px;
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  color: #1d2b53;           /* Rich navy tone */
-  font-family: "Poppins", sans-serif;
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  cursor: pointer;
 }
 
 .logo span {
-  background: linear-gradient(135deg, #007bff, #0056e0);
+  background: linear-gradient(45deg, #ff8a00, #e52e71);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-weight: 900;
+  font-weight: 800;
 }
 
-/* ------------------------
-   NAV LINKS
-------------------------- */
+/* =====================================
+            NAV LINKS
+   ===================================== */
 .nav-links {
-  list-style: none;
   display: flex;
+  gap: 35px;
   align-items: center;
-  gap: 32px;
+  list-style: none;
 }
 
 .nav-links li a {
-  color: #222;
-  font-size: 16px;
-  font-weight: 500;
   text-decoration: none;
-  padding: 6px 0;
+  color: #f1f1f1;
+  font-size: 1rem;
+  font-weight: 500;
   position: relative;
-  transition: 0.3s ease-in-out;
+  padding: 5px;
+  transition: 0.3s ease;
 }
 
+/* Hover underline animation */
 .nav-links li a::after {
   content: "";
   position: absolute;
-  bottom: -3px;
+  bottom: -4px;
   left: 0;
-  width: 0%;
   height: 2px;
-  background: #007bff;
-  transition: 0.4s;
+  width: 0%;
+  background: linear-gradient(45deg, #ff8a00, #e52e71);
+  transition: width 0.3s ease;
 }
 
 .nav-links li a:hover::after {
   width: 100%;
 }
 
-/* ------------------------
-   BUTTON
-------------------------- */
+.nav-links li a:hover {
+  color: #ffce99;
+}
+
+/* =====================================
+            BUTTON
+   ===================================== */
 .btn-primary {
-  padding: 10px 22px;
+  background: linear-gradient(45deg, #ff8a00, #e52e71);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 50px;
   border: none;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #007bff, #0057d2);
-  color: white;
-  font-size: 14px;
   cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
   transition: 0.3s ease;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, #0056d6, #0041a8);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 120, 60, 0.4);
 }
 
-/* ------------------------
-   MOBILE MENU
-------------------------- */
+/* =====================================
+            MOBILE MENU ICON
+   ===================================== */
 .mobile-icon {
   display: none;
-  font-size: 26px;
+  font-size: 1.7rem;
+  color: #fff;
   cursor: pointer;
 }
 
-/* ------------------------
-   RESPONSIVE
-------------------------- */
-@media (max-width: 880px) {
+/* =====================================
+        MOBILE NAVIGATION
+   ===================================== */
+@media (max-width: 900px) {
   .mobile-icon {
     display: block;
-    color: #1d2b53;
   }
 
   .nav-links {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 65%;
     height: 100vh;
-    background: #f7f8fb;
+    width: 70%;
     flex-direction: column;
-    padding-top: 120px;
-    gap: 30px;
-    transition: 0.4s ease;
-    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    gap: 40px;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(12px);
+    transition: 0.4s ease-in-out;
   }
 
   .nav-links.active {
     right: 0;
+  }
+
+  .nav-links li a {
+    font-size: 1.4rem;
+  }
+
+  .btn-primary {
+    font-size: 1.1rem;
+    padding: 12px 28px;
   }
 }
