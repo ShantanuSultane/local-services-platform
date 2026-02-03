@@ -1,0 +1,203 @@
+/* =========================================================
+   GLOBAL PAGE STYLE (Ultra-premium, clean, modern)
+   ========================================================= */
+.services-page {
+  padding: 40px 80px;
+  font-family: "Inter", "Poppins", sans-serif;
+  background: linear-gradient(to bottom right, #f8fafa, #eef1f7);
+  min-height: 100vh;
+}
+
+/* Page Title */
+.page-title {
+  font-size: 38px;
+  font-weight: 800;
+  text-align: center;
+  background: linear-gradient(90deg, #0b62d0, #4ca5ff);
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 8px;
+}
+
+.page-subtitle {
+  text-align: center;
+  margin-bottom: 35px;
+  color: #5a5f6a;
+  font-size: 16px;
+}
+
+/* =========================================================
+   FILTERS BOX (Glassmorphism Style)
+   ========================================================= */
+.filters-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 22px;
+  border-radius: 18px;
+
+  /* Glass effect */
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  /* border: 1px solid rgba(96, 87, 87, 0.25); */
+
+  box-shadow: 0 15px 40px rgba(10, 10, 10, 0.09);
+  margin-bottom: 60px;
+  animation: fadeIn 0.5s ease;
+}
+
+/* Search Input */
+.search-input {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: none;
+  background: #ffffffa8;
+  font-size: 16px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  background: #fff;
+  box-shadow: 0 0 10px rgba(4, 124, 255, 0.3);
+}
+
+/* Dropdowns */
+.filters-box select {
+  padding: 12px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #ffffffd9;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filters-box select:hover {
+  background: #fff;
+  box-shadow: 0px 6px 15px rgba(0,0,0,0.08);
+}
+
+.rating-filter label {
+  margin-right: 12px;
+  
+}
+
+
+/* =========================================================
+   SERVICES GRID
+   ========================================================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 30px;
+  animation: fadeIn 0.7s ease;
+}
+  
+  
+  /* Services Grid */
+  /* .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+  } */
+  
+  /* Card */
+  .service-card {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: 0.3s;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .service-card img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+  }
+  
+  .service-info {
+    padding: 18px;
+  }
+  
+  .service-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  
+  .rating {
+    margin: 5px 0;
+    font-size: 15px;
+  }
+  
+  .reviews {
+    color: #666;
+    margin-left: 5px;
+  }
+  
+  .desc {
+    color: #777;
+    margin-bottom: 10px;
+  }
+  
+  .price-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #0a66c2;
+  }
+  
+  .offer {
+    color: #e63946;
+    font-weight: 600;
+  }
+  
+  .card-buttons {
+    margin-top: 12px;
+    display: flex;
+    gap: 12px;
+  }
+  
+  .details-btn,
+  .book-btn {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 15px;
+  }
+  
+  .details-btn {
+    background: #eee;
+    color: #444;
+  }
+  
+  .book-btn {
+    background: #0a66c2;
+    color: white;
+  }
+  
+  .book-btn:hover {
+    background: #004a99;
+  }
+  
+  .no-results {
+    font-size: 18px;
+    color: #555;
+    text-align: center;
+  }
+  

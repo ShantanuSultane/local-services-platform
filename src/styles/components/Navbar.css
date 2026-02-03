@@ -32,10 +32,21 @@
 .logo {
   font-size: 1.9rem;
   font-weight: 700;
-  color: #fff;
+  color: hsl(0, 0%, 100%);
   letter-spacing: 1px;
   cursor: pointer;
+  margin-left: -50px;
 }
+
+.logo a {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.logo a span {
+  color: inherit !important;
+}
+
 
 .logo span {
   background: linear-gradient(45deg, #ff8a00, #e52e71);
@@ -49,9 +60,10 @@
    ===================================== */
 .nav-links {
   display: flex;
-  gap: 35px;
+  gap: 20px;
   align-items: center;
   list-style: none;
+  margin-right: -50px;
 }
 
 .nav-links li a {

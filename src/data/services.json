@@ -1,19 +1,326 @@
 [
-    {
-      "id": 1,
-      "title": "Home Cleaning",
-      "image": "/assets/cleaning.jpg",
-      "shortDesc": "Full home deep-clean",
-      "fullDesc": "Professional home deep-cleaning service with trained staff.",
-      "price": 499
-    },
-    {
-      "id": 2,
-      "title": "Plumbing",
-      "image": "/assets/plumbing.jpg",
-      "shortDesc": "Fix all plumbing issues",
-      "fullDesc": "Leakage, pipe repair, tap replacement and more.",
-      "price": 299
-    }
-  ]
-  
+  {
+    "id": 1,
+    "title": "Home Deep Cleaning",
+    "image": "../assets/services/cleaning.jpg",
+    "shortDesc": "Professional deep cleaning for your home",
+    "fullDesc": "Our deep cleaning package provides complete cleaning of kitchen, bathroom, bedroom, and living areas.",
+    "category": "Home Cleaning",
+    "price": 899,
+    "offer": 20,
+    "rating": 4.6,
+    "reviews": 450,
+
+    "timeRequired": 2.5,
+    "arrivalTime": 40,
+    "contact": "+91 9876543210",
+    "address": "Pune, Maharashtra",
+
+    "proName": "Rajesh Kumar",
+    "proImage": "../assets/providers/rajeshkumar.png",
+    "experience": 5,
+
+    "includes": ["Kitchen cleaning", "Bathroom cleaning", "Bedroom cleaning", "Hall dusting"],
+    "excludes": ["Painting", "Electric repair"],
+    
+    "preparation": [
+      "Keep valuables safely aside.",
+      "Provide access to all rooms.",
+      "Ensure water supply is available."
+    ],
+
+    "cancellationPolicy": "Free cancellation within 2 hours of booking.",
+
+    "safety": [
+      "Professional wears mask & gloves",
+      "Tools sanitized before service"
+    ],
+
+    "gallery": ["../assets/services_gallery/cleaning1.jpg", "../assets/services_gallery/cleaning2.jpg"],
+
+    "faq": [
+      { "q": "How long does it take?", "a": "Usually 2–3 hours." }
+    ],
+
+    "reviewsData": [
+      { "user": "Amit", "stars": 5, "comment": "Excellent service!" }
+    ]
+  },
+
+  {
+    "id": 2,
+    "title": "Plumbing",
+    "image": "../assets/services/plumber.png",
+    "shortDesc": "Fix all plumbing issues",
+    "fullDesc": "Leakage, pipe repair, tap replacement and more.",
+    "category": "Plumber",
+    "price": 299,
+    "rating": 4.7,
+    "offer": 10,
+    "reviews": 210,
+
+    "timeRequired": 1,
+    "arrivalTime": 30,
+    "contact": "+91 9988776655",
+    "address": "Pune, Maharashtra",
+
+    "proName": "Suresh Narwe",
+    "proImage": "/assets/pro.png",
+    "experience": 7,
+
+    "includes": ["Leakage fix", "Tap replacement", "Pipe fitting"],
+    "excludes": ["Water tank cleaning"],
+    
+    "preparation": ["Ensure water supply is available", "Clear access to work area"],
+
+    "cancellationPolicy": "₹50 cancellation charge after technician assigned.",
+
+    "safety": ["Technician wears mask", "Sanitized tools"],
+
+    "gallery": [
+      "/assets/plumbing1.jpg",
+      "/assets/plumbing2.jpg"
+    ],
+
+    "faq": [
+      { "q": "Do you provide spare parts?", "a": "Yes, extra charges apply." }
+    ],
+
+    "reviewsData": [
+      { "user": "Rohit", "stars": 4, "comment": "Quick and neat work." }
+    ]
+  },
+
+  {
+    "id": 3,
+    "title": "Electrical Repair",
+    "image": "../assets/services/electrician.jpg",
+    "shortDesc": "All electrical repairs",
+    "fullDesc": "Wiring, appliance repair, lighting installation and more.",
+    "category": "Electrician",
+    "price": 399,
+    "rating": 4.6,
+    "offer": 15,
+    "reviews": 330,
+
+    "timeRequired": 1.2,
+    "arrivalTime": 35,
+    "contact": "+91 9876501234",
+    "address": "Pune, Maharashtra",
+
+    "proName": "Aakash Patil",
+    "proImage": "/assets/pro.png",
+    "experience": 6,
+
+    "includes": ["Fan repair", "Switchboard installation", "Wiring check"],
+    "excludes": ["Major circuit rewiring"],
+
+    "preparation": ["Turn off main power before inspection"],
+
+    "cancellationPolicy": "Free cancellation within 30 minutes.",
+
+    "safety": ["Shock-proof gloves", "Insulated tools"],
+
+    "gallery": [
+      "/assets/electric1.jpg",
+      "/assets/electric2.jpg"
+    ],
+
+    "faq": [
+      { "q": "Do you handle appliance repair?", "a": "Yes, charges vary." }
+    ],
+
+    "reviewsData": [
+      { "user": "Sneha", "stars": 5, "comment": "Very skilled electrician!" }
+    ]
+  },
+
+  {
+    "id": 4,
+    "title": "Gardening",
+    "image": "../assets/services/Gardening.jpg",
+    "shortDesc": "Lawn mowing and garden care",
+    "fullDesc": "Hedge trimming, mowing, planting and maintenance.",
+    "category": "Gardening",
+    "price": 199,
+    "rating": 4.4,
+    "offer": 5,
+    "reviews": 120,
+
+    "timeRequired": 1.5,
+    "arrivalTime": 45,
+    "contact": "+91 7788994412",
+    "address": "Pune, Maharashtra",
+
+    "proName": "Mahesh Jadhav",
+    "proImage": "/assets/pro.png",
+    "experience": 4,
+
+    "includes": ["Lawn mowing", "Hedge trimming", "Plant care"],
+    "excludes": ["Tree cutting"],
+
+    "preparation": ["Keep pets away from garden area"],
+
+    "cancellationPolicy": "₹30 cancellation charge.",
+
+    "safety": ["Uses gloves & protective gear"],
+
+    "gallery": ["/assets/garden1.jpg"],
+
+    "faq": [
+      { "q": "Do you bring tools?", "a": "Yes, all tools included." }
+    ],
+
+    "reviewsData": [
+      { "user": "Nikita", "stars": 4, "comment": "Great service!" }
+    ]
+  },
+
+  {
+    "id": 5,
+    "title": "Carpentry",
+    "image": "../assets/services/carpentry.jpg",
+    "shortDesc": "Woodwork and furniture repair",
+    "fullDesc": "Custom furniture, repairs, installations.",
+    "category": "Carpenter",
+    "price": 349,
+    "rating": 4.0,
+    "offer": 12,
+    "reviews": 180,
+
+    "timeRequired": 2,
+    "arrivalTime": 50,
+    "contact": "+91 7001020030",
+    "address": "Pune, Maharashtra",
+
+    "proName": "Deepak Sharma",
+    "proImage": "/assets/pro.png",
+    "experience": 8,
+
+    "includes": ["Furniture repair", "Wood cutting"],
+    "excludes": ["Polishing"],
+
+    "preparation": ["Move furniture before service"],
+
+    "cancellationPolicy": "Free cancellation.",
+
+    "safety": ["Dust-controlled tools"],
+
+    "gallery": [],
+
+    "faq": [],
+
+    "reviewsData": []
+  },
+
+  {
+    "id": 6,
+    "title": "Painting",
+    "image": "../assets/services/painting.webp",
+    "shortDesc": "Interior and exterior painting",
+    "fullDesc": "Professional painting service for homes & offices.",
+    "category": "Painting",
+    "price": 449,
+    "rating": 3.9,
+    "offer": 8,
+    "reviews": 95,
+
+    "timeRequired": 3,
+    "arrivalTime": 60,
+    "contact": "+91 9887766550",
+    "address": "Pune, Maharashtra",
+
+    "proName": "Ramesh Wani",
+    "proImage": "/assets/pro.png",
+    "experience": 10,
+
+    "includes": ["Wall painting", "Primer coating"],
+    "excludes": ["Furniture shifting"],
+
+    "preparation": ["Cover furniture before service"],
+
+    "cancellationPolicy": "₹75 cancellation charge.",
+
+    "safety": ["Non-toxic paints"],
+
+    "gallery": [],
+
+    "faq": [],
+
+    "reviewsData": []
+  },
+
+  {
+    "id": 7,
+    "title": "Pest Control",
+    "image": "../assets/services/pest_control.jpg",
+    "shortDesc": "Effective pest management",
+    "fullDesc": "Termite control, insect removal and home safety solutions.",
+    "category": "Pest Control",
+    "price": 259,
+    "rating": 4.1,
+    "offer": 18,
+    "reviews": 210,
+
+    "timeRequired": 1.5,
+    "arrivalTime": 50,
+    "contact": "+91 9922334455",
+    "address": "Pune, Maharashtra",
+
+    "proName": "Santosh Kale",
+    "proImage": "/assets/pro.png",
+    "experience": 6,
+
+    "includes": ["Chemical spray", "Home inspection"],
+    "excludes": ["Garden pest control"],
+
+    "preparation": ["Vacate room for 2 hours after service"],
+
+    "cancellationPolicy": "Non-refundable after technician assigned.",
+
+    "safety": ["Eco-friendly chemicals"],
+
+    "gallery": [],
+
+    "faq": [],
+
+    "reviewsData": []
+  },
+
+  {
+    "id": 8,
+    "title": "Appliance Repair",
+    "image": "../assets/services/appliences_repair.jpg",
+    "shortDesc": "Fix home appliances",
+    "fullDesc": "Refrigerator, washing machine, oven repair.",
+    "category": "Appliance Repair",
+    "price": 319,
+    "rating": 3.5,
+    "offer": 25,
+    "reviews": 160,
+
+    "timeRequired": 1,
+    "arrivalTime": 30,
+    "contact": "+91 8800554466",
+    "address": "Pune, Maharashtra",
+
+    "proName": "Vikas Deshmukh",
+    "proImage": "/assets/pro.png",
+    "experience": 9,
+
+    "includes": ["Inspection", "Minor repair"],
+    "excludes": ["Spare parts"],
+
+    "preparation": ["Provide electricity connection"],
+
+    "cancellationPolicy": "₹50 cancellation charge.",
+
+    "safety": ["Electric safety gear"],
+
+    "gallery": [],
+
+    "faq": [],
+
+    "reviewsData": []
+  }
+]
