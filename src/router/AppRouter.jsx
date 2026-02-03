@@ -6,6 +6,7 @@ import ServiceDetails from "../pages/ServiceDetails";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import BookService from "../pages/BookService";
+import Providers from "../pages/Providers";
 
 export default function AppRouter() {
   return (
@@ -16,6 +17,7 @@ export default function AppRouter() {
           <Route path="/services" element={<Services />} />
           <Route path="/services/:id" element={<ServiceDetails />} />
           <Route path="/book/:id" element={<BookService />} />
+          <Route path="/providers" element={<Providers />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
