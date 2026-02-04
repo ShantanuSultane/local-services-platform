@@ -54,7 +54,7 @@ export default function Services() {
 
   return (
     <div className="services-page">
-      <h1 className="page-title">Our Professional Services</h1>
+      <h1 className="page-title1">Our Professional Services</h1>
       <p className="page-subtitle">
         High-quality trusted professionals...!
       </p>

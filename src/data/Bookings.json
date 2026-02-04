@@ -1,0 +1,36 @@
+[
+    {
+      "id": 1,
+      "serviceId": 1,
+      "service": "Home Deep Cleaning",
+      "image": "/assets/cleaning.jpg",
+      "date": "15 Feb 2026",
+      "time": "10:00 AM",
+      "provider": "Amit Cleaning Solutions",
+      "status": "Upcoming",
+      "price": 899
+    },
+    {
+      "id": 2,
+      "serviceId": 2,
+      "service": "Electrician - Fan Repair",
+      "image": "/assets/electrician.jpg",
+      "date": "08 Feb 2026",
+      "time": "4:00 PM",
+      "provider": "Shree Electricals",
+      "status": "Completed",
+      "price": 299
+    },
+    {
+      "id": 3,
+      "serviceId": 3,
+      "service": "AC Service & Gas Refill",
+      "image": "/assets/ac.jpg",
+      "date": "02 Jan 2026",
+      "time": "1:30 PM",
+      "provider": "Cooling Experts",
+      "status": "Cancelled",
+      "price": 1299
+    }
+  ]
+  
