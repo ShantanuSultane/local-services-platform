@@ -22,6 +22,7 @@ export default function ServiceDetails() {
         </div>
       </div>
 
+      <div className="sticky-safe-wrapper">
       <div className="details-container">
 
         {/* LEFT SECTION */}
@@ -146,7 +147,9 @@ export default function ServiceDetails() {
         </div>
 
         {/* RIGHT BOOKING SIDEBAR */}
-        <div className="right-section">
+        <div className="right-section-details">
+
+        <div className="sticky-wrapper">
 
           <div className="sticky-box">
             <h2>{service?.title}</h2>
@@ -181,8 +184,10 @@ export default function ServiceDetails() {
           </div>
 
         </div>
+        </div>
 
       </div>
     </div>
+  </div>
   );
 }

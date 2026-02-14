@@ -3,23 +3,49 @@ import AppRouter from "./router/AppRouter";
 import "./styles/global.css";
 
 export default function App() {
-  const [bookings, setBookings] = useState([]);
 
-  // Load from localStorage
+  // LOAD from localStorage on initial render
+  const [bookings, setBookings] = useState(() => {
+    const stored = localStorage.getItem("bookings");
+    return stored ? JSON.parse(stored) : [];
+  });
+
+  // ONLY load JSON **if no localStorage exists**
   useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem("bookings")) || [];
-    setBookings(stored);
+    const stored = localStorage.getItem("bookings");
+
+    if (!stored) {
+      import("./data/Bookings.json").then((data) => {
+        localStorage.setItem("bookings", JSON.stringify(data.default));
+        setBookings(data.default);
+      });
+    }
   }, []);
 
-  // Save to localStorage
+  // SAVE BOOKINGS to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem("bookings", JSON.stringify(bookings));
   }, [bookings]);
 
+  // ADD BOOKING
+  const addBooking = (booking) => {
+    setBookings((prev) => [...prev, booking]);
+  };
+
+  // CANCEL BOOKING
+  const cancelBooking = (id) => {
+    setBookings((prev) =>
+      prev.map((b) =>
+        b.id === id ? { ...b, status: "Cancelled" } : b
+      )
+    );
+  };
+
   return (
-    <AppRouter 
-      bookings={bookings} 
-      setBookings={setBookings} 
+    <AppRouter
+      bookings={bookings}
+      addBooking={addBooking}
+      cancelBooking={cancelBooking}
     />
   );
 }

@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import servicesData from "../data/services.json";
 import "../styles/components/Services.css";
 import { Link } from "react-router-dom";
 
 export default function Services() {
+  // Read URL search params
+  const location = useLocation();
+  const queryParam = new URLSearchParams(location.search).get("search") || "";
+
   const [services, setServices] = useState([]);
   const [filtered, setFiltered] = useState([]);
 
@@ -15,10 +20,15 @@ export default function Services() {
   const [maxPrice, setMaxPrice] = useState(5000);
   const [rating, setRating] = useState(0);
 
+  // Load services and apply search query from URL
   useEffect(() => {
     setServices(servicesData);
     setFiltered(servicesData);
-  }, []);
+
+    if (queryParam) {
+      setSearch(queryParam); // inject search term inside state
+    }
+  }, [queryParam]);
 
   // filter logic
   useEffect(() => {
@@ -51,7 +61,6 @@ export default function Services() {
 
     setFiltered(temp);
   }, [search, category, minPrice, maxPrice, rating, sort, services]);
-
   return (
     <div className="services-page">
       <h1 className="page-title1">Our Professional Services</h1>

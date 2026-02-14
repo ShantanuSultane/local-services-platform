@@ -8,36 +8,36 @@ import Contact from "../pages/Contact";
 import BookService from "../pages/BookService";
 import Providers from "../pages/Providers";
 import Bookings from "../pages/Bookings";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
+import ForgotPassword from "../pages/ForgotPass";
+import ResetPassword from "../pages/ResetPass";
 
-export default function AppRouter({ bookings, setBookings }) {
-
-  // Add new booking
-  const addBooking = (newBooking) => {
-    setBookings((prev) => [...prev, newBooking]);
-  };
-
-  // Cancel booking
-  const cancelBooking = (id) => {
-    setBookings((prev) =>
-      prev.map((b) =>
-        b.id === id ? { ...b, status: "Cancelled" } : b
-      )
-    );
-  };
-
+// ❗ FIX: receive all props correctly
+export default function AppRouter({ bookings, addBooking, cancelBooking }) {
   return (
     <BrowserRouter>
       <MainLayout>
         <Routes>
+
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
 
+          {/* Services */}
           <Route path="/services" element={<Services />} />
-
           <Route
             path="/services/:id"
             element={<ServiceDetails onBook={addBooking} />}
           />
 
+          {/* Book page */}
+          <Route
+            path="/book/:id"
+            element={<BookService addBooking={addBooking} />}
+          />
+
+          {/* All bookings */}
           <Route
             path="/bookings"
             element={
@@ -48,10 +48,18 @@ export default function AppRouter({ bookings, setBookings }) {
             }
           />
 
-          <Route path="/book/:id" element={<BookService />} />
+          {/* Users */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
+
+          {/* Providers */}
+          {/* <Route path="/providers" element={<Providers />} /> */}
+
           <Route path="/providers" element={<Providers />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+
+
         </Routes>
       </MainLayout>
     </BrowserRouter>

@@ -243,3 +243,43 @@
     padding: 30px;
   }
 }
+
+
+
+
+
+
+
+.provider-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+}
+
+.provider-popup-box {
+  background: #fff;
+  padding: 30px 50px;
+  border-radius: 14px;
+  text-align: center;
+  max-width: 420px;
+  animation: fadeUp 0.4s ease-out;
+  box-shadow: 0px 8px 22px rgba(0,0,0,0.15);
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.provider-popup-box h2 {
+  margin-bottom: 10px;
+  color: #2e7dff;
+}

@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+.sticky-safe-wrapper {
+  position: relative;
+  overflow: visible;
+}
+
 .details-page {
   width: 100%;
   max-width: 1250px;
@@ -195,8 +200,13 @@
 /* =========================
    RIGHT SIDEBAR — BOOKING
 ========================= */
-.right-section {
+.right-section-details {
   position: relative;
+}
+
+.sticky-wrapper {
+  position: relative;
+  height: fit-content;
 }
 
 .sticky-box {

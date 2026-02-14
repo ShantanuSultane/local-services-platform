@@ -2,8 +2,22 @@ import { Link } from "react-router-dom";
 import services from "../data/services.json";
 import ServiceCard from "../components/ServiceCard";
 import "../styles/components/Home.css";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+
 
 export default function Home() {
+
+
+  const navigate = useNavigate();
+  const [searchText, setSearchText] = useState("");
+
+  const handleSearch = () => {
+    if (!searchText.trim()) return;  // Prevent empty search
+
+    navigate(`/services?search=${encodeURIComponent(searchText)}`);
+  };
+
   return (
     <div className="home-advanced">
 
@@ -25,10 +39,17 @@ export default function Home() {
       beauty, painting & more — fast, verified and reliable.
     </p>
 
-    <div className="hero-search-box slide-up">
-      <input type="text" placeholder="Search services — cleaning, AC repair, electrician..." />
-      <button>Search</button>
-    </div>
+      <div className="hero-search-box slide-up">
+            <input
+              type="text"
+              placeholder="Search services — cleaning, AC repair, electrician..."
+              value={searchText}
+              onChange={(e) => setSearchText(e.target.value)}
+              onKeyDown={(e) => e.key === "Enter" && handleSearch()}
+            />
+            <button onClick={handleSearch}>Search</button>
+      </div>
+
 
     <div className="hero-stats-floating">
       <div className="float-card">
@@ -49,25 +70,28 @@ export default function Home() {
   </div>
 
   {/* Right Content — Premium Quick Highlights Section */}
-  <div className="hero-right-section">
-    <h3>Why Choose Us?</h3>
-    <ul>
-      <li>
-        <strong>Fast Booking:</strong> Book a professional in under 60 seconds.
-      </li>
-      <li>
-        <strong>Verified Experts:</strong> All professionals are background-checked.
-      </li>
-      <li>
-        <strong>Flexible Scheduling:</strong> Choose time slots that suit you.
-      </li>
-      <li>
-        <strong>Service Warranty:</strong> We stand behind our work with a 7-day warranty.
-      </li>
-    </ul>
-    <button className="cta-btn">Explore Services</button>
-  </div>
+<div className="hero-right-section">
+  <h3>Getting Things Done <br />Made Easy</h3>
+  <ul>
+    <li>
+      <strong>1. Tell Us Your Need:</strong> Search or browse from hundreds of home services.
+    </li>
+    <li>
+      <strong>2. Compare & Choose:</strong> View service details, pricing, and ratings instantly.
+    </li>
+    <li>
+      <strong>3. Book Instantly:</strong> Select your preferred date & time—no calls needed.
+    </li>
+    <li>
+      <strong>4. Get It Done:</strong> A verified professional arrives and completes your service.
+    </li>
+  </ul>
 
+  {/* Functional Explore Button */}
+  <Link to="/services" className="cta-btn">
+  Explore Services
+  </Link>
+</div>
 </div>
 </section>
 
@@ -76,8 +100,8 @@ export default function Home() {
 
 
       {/* ---------------- Curved Feature Section ---------------- */}
-      <section className="features">
-  <h2 className="section-title">All Home Services in One Platform</h2>
+<section className="features">
+  <h2 className="section-title-home">All Home Services in One Platform</h2>
 
   <div className="features-grid">
 

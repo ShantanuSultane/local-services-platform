@@ -1,10 +1,25 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, Link } from "react-router-dom";
+import { useState } from "react";
 import services from "../data/services.json";
 import "../styles/components/BookService.css";
 
-export default function BookService() {
+export default function BookService({ addBooking }) {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const service = services.find((s) => s.id === parseInt(id));
+
+  const [form, setForm] = useState({
+    fullname: "",
+    mobile: "",
+    email: "",
+    address: "",
+    date: "",
+    time: "9:00 AM – 11:00 AM",
+    instructions: "",
+  });
+
+  const [popup, setPopup] = useState(false);
 
   if (!service) {
     return <h2 className="not-found">Service not found</h2>;
@@ -13,10 +28,44 @@ export default function BookService() {
   const tax = Math.round(service.price * 0.18);
   const totalPrice = service.price + tax;
 
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleBooking = () => {
+    if (!form.fullname || !form.mobile || !form.email || !form.address || !form.date) {
+      alert("Please fill all required fields before booking.");
+      return;
+    }
+
+    const newBooking = {
+      id: Date.now(),
+      serviceName: service.title,
+      serviceId: service.id,
+      price: totalPrice,
+      date: form.date,
+      time: form.time,
+      pro: "Assigned Professional",
+      status: "Upcoming",
+    };
+
+    addBooking(newBooking);
+
+    setPopup(true);
+
+    setTimeout(() => {
+      navigate("/bookings");
+    }, 1500);
+  };
+
   return (
     <div className="book-page">
+      {popup && (
+        <div className="booking-popup">
+          <p>✅ Booking Confirmed Successfully!</p>
+        </div>
+      )}
 
-      {/* PAGE TITLE */}
       <div className="page-header">
         <h1>Book {service.title}</h1>
         <p>Fill your details & confirm your booking instantly...!</p>
@@ -24,51 +73,43 @@ export default function BookService() {
 
       <div className="booking-layout">
 
-        {/* LEFT SIDE — FORM SECTION */}
         <div className="booking-form-area">
-
-          {/* CUSTOMER DETAILS */}
           <div className="form-card">
             <h2>Customer Details</h2>
 
             <div className="form-group">
               <label>Full Name</label>
-              <input type="text" placeholder="Enter your name" />
+              <input type="text" name="fullname" value={form.fullname} placeholder="Enter your name" onChange={handleChange} />
             </div>
 
             <div className="form-group">
               <label>Mobile Number</label>
-              <input type="tel" placeholder="Enter mobile number" />
+              <input type="tel" name="mobile" value={form.mobile} placeholder="Enter mobile number" onChange={handleChange} />
             </div>
 
             <div className="form-group">
               <label>Email Address</label>
-              <input type="email" placeholder="example@gmail.com" />
+              <input type="email" name="email" value={form.email} placeholder="example@gmail.com" onChange={handleChange} />
             </div>
           </div>
 
-          {/* ADDRESS DETAILS */}
           <div className="form-card">
-            <h2 className="address">Service Address</h2>
-            <textarea
-              rows="3"
-              placeholder="Flat / House No, Street, Locality, Landmark"
-            ></textarea>
+            <h2>Service Address</h2>
+            <textarea name="address" value={form.address} placeholder="Flat / House No, Street, Locality, Landmark" onChange={handleChange}></textarea>
           </div>
 
-          {/* DATE & TIME SECTION */}
           <div className="form-card">
-            <h2 className="schedule">Service Schedule</h2>
+            <h2>Service Schedule</h2>
 
             <div className="form-row">
               <div className="form-group">
                 <label>Select Date</label>
-                <input type="date" />
+                <input type="date" name="date" value={form.date} onChange={handleChange} />
               </div>
 
               <div className="form-group">
                 <label>Select Time Slot</label>
-                <select>
+                <select name="time" value={form.time} onChange={handleChange}>
                   <option>9:00 AM – 11:00 AM</option>
                   <option>11:00 AM – 1:00 PM</option>
                   <option>2:00 PM – 4:00 PM</option>
@@ -79,19 +120,19 @@ export default function BookService() {
             </div>
           </div>
 
-          {/* SPECIAL INSTRUCTIONS */}
           <div className="form-card">
-            <h2 className="special-instructions">Any Special Instructions?</h2>
-            <textarea
-              rows="2"
-              placeholder="Write any special request for the professional (optional)"
-            ></textarea>
+            <h2>Any Special Instructions?</h2>
+            <textarea name="instructions" value={form.instructions} placeholder="Write any special request (optional)" onChange={handleChange}></textarea>
           </div>
 
-          <button className="confirm-booking">Confirm Booking</button>
+          {/* ✅ FIXED */}
+            <button type="button" className="confirm-booking-btn" onClick={handleBooking}>
+              Confirm Booking
+            </button>
+
+
         </div>
 
-        {/* RIGHT SIDE — BOOKING SUMMARY */}
         <div className="summary-box">
           <div className="sticky-summary">
             <h2>Booking Summary</h2>
@@ -110,13 +151,8 @@ export default function BookService() {
               <p className="total"><span>Total</span> <span>₹{totalPrice}</span></p>
             </div>
 
-            <p className="arrival">
-              ⏳ Expected arrival in <b>{service.arrivalTime} minutes</b>
-            </p>
-
-            <p className="safety-note">
-              🔒 100% Safe & Secure Booking • Verified Professionals
-            </p>
+            <p className="arrival">⏳ Expected arrival in <b>{service.arrivalTime} minutes</b></p>
+            <p className="safety-note">🔒 100% Safe & Secure Booking • Verified Professionals</p>
           </div>
         </div>
 

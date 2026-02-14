@@ -1,0 +1,215 @@
+.reg-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f5f7fa;
+  padding: 20px;
+}
+
+/* CLEAN WHITE CARD */
+.reg-card {
+  width: 960px;
+  display: flex;
+  border-radius: 18px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0px 8px 35px rgba(0,0,0,0.12);
+  animation: fadeIn .9s ease;
+}
+
+/* LEFT IMAGE */
+
+.reg-image {
+  width: 45%;
+  background: url("../assets/register-page4.webp")
+    center/cover no-repeat;
+  padding: 50px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.reg-image h1 {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.reg-image p {
+  opacity: 0.9;
+}
+
+
+
+.auth-card {
+  position: relative;
+  width: 850px;
+  min-height: 520px;
+  padding: 40px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.8s ease;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: center;
+}
+
+
+.card-main-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  margin-top: -20px;
+  margin-left: -10px;
+}
+
+.card-second-title {
+  font-size: 34px;
+  margin-bottom: 8px;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+.reg-image p {
+  opacity: 0.9;
+  text-align: center;
+}
+
+
+/* RIGHT CONTENT */
+.reg-content {
+  width: 55%;
+  padding: 45px 40px;
+}
+
+/* FORM FIELDS */
+.reg-form .reg-field {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.reg-field label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #464444f0;
+}
+
+.reg-field input {
+  padding: 13px 15px;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: 0.25s;
+  color: #313335;
+}
+
+.reg-field input:hover,
+.reg-field input:focus {
+  border-color: #0072ff;
+  box-shadow: 0 0 5px rgba(0,115,255,0.3);
+}
+
+/* Password icon */
+.password-field {
+  position: relative;
+}
+
+.eye-icon {
+  position: absolute;
+  right: 15px;
+  top: 40px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+.eye-icon:hover {
+  opacity: 1;
+}
+
+.password-field label {
+  margin-right: 386px;
+}
+
+.toggle-pass {
+  position: absolute;
+  right: 15px;
+  top: 33px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+.toggle-pass:hover {
+  opacity: 1;
+}
+
+/* BUTTON */
+.reg-btn {
+  width: 100%;
+  padding: 14px;
+  background: #0072ff;
+  color: white;
+  font-size: 16px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.reg-btn:hover {
+  background: #005ed1;
+  transform: translateY(-2px);
+}
+
+/* SWITCH TEXT */
+.switch {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.switch span {
+  color: #0072ff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .reg-card {
+    flex-direction: column;
+    width: 95%;
+  }
+  .reg-image {
+    width: 100%;
+    height: 220px;
+    text-align: center;
+  }
+  .reg-content {
+    width: 100%;
+  }
+}

@@ -23,6 +23,7 @@
   color: #ffffff;
   font-weight: 700;
   margin-bottom: 10px;
+  margin-right: 110px;
 }
 .footer-logo span {
   background: linear-gradient(45deg, #ff8a00, #e52e71);
@@ -36,6 +37,7 @@
   opacity: 0.85;
   line-height: 1.6;
   margin-bottom: 20px;
+  color: #c5c5c5;
 }
 
 /* Social Icons */
@@ -77,6 +79,7 @@
 .footer-contact p {
   margin-bottom: 10px;
   font-size: 0.95rem;
+  color: #c5c5c5;
 }
 
 /* App Buttons */
