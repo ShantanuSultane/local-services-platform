@@ -22,7 +22,7 @@ export default function App() {
     }
   }, []);
 
-  // SAVE BOOKINGS to localStorage whenever they change
+  // SAVE BOOKINGS to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem("bookings", JSON.stringify(bookings));
   }, [bookings]);
