@@ -20,7 +20,6 @@ export default function Provider() {
 
   const [successPopup, setSuccessPopup] = useState(false);
 
-  // Convert File to Base64
   const toBase64 = (file) =>
     new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -42,9 +41,7 @@ export default function Provider() {
     e.preventDefault();
     setError("");
   
-    try {
-      // Upload ONLY text data (images not stored)
-  
+    try {  
       const providerData = {
         id: Date.now(),
         name: form.name,
@@ -59,12 +56,10 @@ export default function Provider() {
         createdAt: new Date().toISOString()
       };
   
-      // Save clean data
       const existing = JSON.parse(localStorage.getItem("providers")) || [];
       existing.push(providerData);
       localStorage.setItem("providers", JSON.stringify(existing));
   
-      // ADMIN EMAIL
       await emailjs.send(
         "service_wlpkpfv",
         "template_zjpttte",
@@ -72,7 +67,6 @@ export default function Provider() {
         "nmstShpF3IV9Fd3fa"
       );
   
-      // AUTO-REPLY USER
       await emailjs.send(
         "service_wlpkpfv",
         "template_3bom8bh",
