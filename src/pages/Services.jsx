@@ -5,7 +5,6 @@ import "../styles/components/Services.css";
 import { Link } from "react-router-dom";
 
 export default function Services() {
-  // Read URL search params
   const location = useLocation();
   const queryParam = new URLSearchParams(location.search).get("search") || "";
 
@@ -30,7 +29,6 @@ export default function Services() {
     }
   }, [queryParam]);
 
-  // filter logic
   useEffect(() => {
     let temp = [...services];
 
