@@ -5,12 +5,10 @@
   padding-bottom: 80px;
 }
 
-/* ------------------- */
 /*     HERO SECTION    */
-/* ------------------- */
 .provider-hero {
-  background: url("../assets/provider-hero2.jpg") center/cover no-repeat;
-  padding: 70px 20px;
+  background: url("../assets/pages/provider-hero2.jpg") center/cover no-repeat;
+  padding: 100px 20px;
   text-align: center;
   color: white;
   animation: fadeInHero 1s ease forwards;
@@ -34,6 +32,7 @@
   font-size: 19px;
   opacity: 0.95;
   font-weight: 400;
+  color: #aeb0b3;
 }
 
 @keyframes fadeInHero {
@@ -41,9 +40,8 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --------------------------- */
 /*    WHY REGISTER SECTION     */
-/* --------------------------- */
+
 .provider-info-section {
   margin-top: 55px;
   text-align: center;
@@ -109,10 +107,7 @@
   line-height: 1.45;
 }
 
-/* -------------------- */
 /*     FORM SECTION     */
-/* -------------------- */
-
 .provider-container {
   display: flex;
   justify-content: center;
@@ -153,10 +148,7 @@
   font-size: 16px;
 }
 
-/* -------------------- */
 /*      INPUT FIELDS    */
-/* -------------------- */
-
 .provider-form {
   display: flex;
   flex-direction: column;
@@ -202,9 +194,7 @@
   background: white;
 }
 
-/* -------------------- */
 /*      SUBMIT BUTTON   */
-/* -------------------- */
 
 .provider-btn {
   margin-top: 25px;

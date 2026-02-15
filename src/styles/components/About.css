@@ -1,6 +1,4 @@
-/* ----------------------------
-   COLOR PALETTE
------------------------------ */
+   /* COLOR PALETTE */
 :root {
   --indigo: #3949ab;
   --blue: #1e88e5;
@@ -10,9 +8,7 @@
   --white: #ffffff;
 }
 
-/* ----------------------------
-   GLOBAL WRAPPER
------------------------------ */
+   /* GLOBAL WRAPPER */
 .about-wrapper {
   background: var(--bg-light);
   padding-bottom: 60px;
@@ -43,15 +39,13 @@
 .delay-2 { animation-delay: 0.4s; }
 .delay-3 { animation-delay: 0.6s; }
 
-/* ----------------------------
-   HERO SECTION
------------------------------ */
+   /* HERO SECTION */
 .about-hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 40px 8%;
-  background: url("../assets/about-hero.jpg") center/cover no-repeat;
+  background: url("../assets/pages/about-hero.jpg") center/cover no-repeat;
   color: white;
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
@@ -126,9 +120,7 @@
   50% { transform: translateY(-12px); }
 }
 
-/* ----------------------------
-   SECTIONS
------------------------------ */
+   /* SECTIONS */
 .about-core,
 .values-section,
 .why-us,
@@ -174,9 +166,7 @@ p {
   line-height: 1.7;
 }
 
-/* ----------------------------
-   VALUES GRID
------------------------------ */
+   /* VALUES GRID */
 .values-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -203,9 +193,7 @@ p {
   font-size: 2.3rem;
 }
 
-/* ----------------------------
-   WHY CHOOSE US
------------------------------ */
+   /* WHY CHOOSE US */
 .why-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -229,9 +217,7 @@ p {
   color: white;
 }
 
-/* ----------------------------
-   STATS SECTION
------------------------------ */
+   /* STATS SECTION */
 .stats-section {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -258,21 +244,12 @@ p {
   color: var(--blue);
 }
 
-/* ----------------------------
-   CTA SECTION
------------------------------ */
+   /* CTA SECTION */
 .cta {
   margin-top: 60px;
   background: linear-gradient(155deg, #d1d5db, #fffbfb);
-color: #111;
-
-  
-  
-
-  
-  
-  
-    padding: 70px 30px;
+  color: #111;
+  padding: 70px 30px;
   color: white;
   border-radius: 25px;
   text-align: center;
@@ -287,6 +264,7 @@ color: #111;
   font-weight: 700;
   border-radius: 30px;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .cta-btn:hover {
@@ -294,9 +272,7 @@ color: #111;
   transform: translateY(-5px);
 }
 
-/* ----------------------------
-   RESPONSIVE
------------------------------ */
+   /* RESPONSIVE */
 @media (max-width: 900px) {
   .about-hero {
     flex-direction: column;

@@ -1,6 +1,4 @@
-/* =========================================================
-   GLOBAL PAGE STYLE (Ultra-premium, clean, modern)
-   ========================================================= */
+/* GLOBAL PAGE STYLE */
 .services-page {
   padding: 40px 80px;
   font-family: "Inter", "Poppins", sans-serif;
@@ -27,17 +25,13 @@
   font-size: 16px;
 }
 
-/* =========================================================
-   FILTERS BOX (Glassmorphism Style)
-   ========================================================= */
+/* FILTERS BOX  */
 .filters-box {
   display: flex;
   flex-wrap: wrap;
   gap: 40px;
   padding: 22px;
   border-radius: 18px;
-
-  /* Glass effect */
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(12px);
   /* border: 1px solid rgba(96, 87, 87, 0.25); */
@@ -86,24 +80,13 @@
   
 }
 
-
-/* =========================================================
-   SERVICES GRID
-   ========================================================= */
+/* SERVICES GRID */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
   gap: 30px;
   animation: fadeIn 0.7s ease;
 }
-  
-  
-  /* Services Grid */
-  /* .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 25px;
-  } */
   
   /* Card */
   .service-card {

@@ -1,6 +1,4 @@
-/* -------------------------------
-   FOOTER - PREMIUM ADVANCED
---------------------------------*/
+   /* FOOTER - PREMIUM ADVANCED */
 
 .footer-advanced {
   background: rgba(0, 0, 0, 0.65);
@@ -68,6 +66,7 @@
   margin-bottom: 10px;
   font-size: 0.95rem;
   transition: 0.3s;
+  text-decoration: none;
 }
 
 .footer-links a:hover {
@@ -84,24 +83,17 @@
 
 /* App Buttons */
 .footer-apps img {
-  width: 40px;
-  margin-top: 15px;
-  margin-right: 10px;
+  height: 40px;
+  width: 250px;
+  transition: 0.3s;
+  margin-right: 15px;
+  margin-top: 20px;
   filter: brightness(0.9);
-  transition: 0.3s ease;
-}
-
-.footer-apps img:first-child {
-  width: 60px;
-}
-
-.footer-apps img:last-child {
-  margin-bottom: 11px;
-  margin-left: 10px;
+  cursor: pointer;
 }
 
 .footer-apps img:hover {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
   filter: brightness(1);
 }
 

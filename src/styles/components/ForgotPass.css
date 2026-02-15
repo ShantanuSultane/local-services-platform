@@ -1,11 +1,9 @@
-/* =============================== */
 /*        AUTH PAGE LAYOUT         */
-/* =============================== */
 
 body, html {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;   /* FIX: Prevent right-side scroll */
+  overflow-x: hidden; 
   /* background: url("/assets/backgrounds/login.png") center/cover no-repeat; */
 }
 
@@ -17,7 +15,7 @@ body, html {
   height: 100%;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.75; /* slight dimming for better contrast */
+  opacity: 0.75; 
 }
 
 .auth-container1 {
@@ -26,42 +24,30 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -30px; /* slight upward shift to counteract title margin */
-
-  padding: 20px; /* slight breathing room */
+  margin-top: -30px; 
+  padding: 20px; 
   box-sizing: border-box;
-
-  /* no background here — you will add your own */
 }
 
 
-/* =============================== */
 /*            AUTH CARD            */
-/* =============================== */
 
 .auth-card1 {
   width: 100%;
   max-width: 500px;
   padding: 40px;
-
-  /* Glassmorphism */
   background: rgba(255, 255, 255, 0.18);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
-
-  /* FIX: No flashing */
   opacity: 1;
   animation: slideFadeIn 0.7s ease forwards;
-
-  /* IMPORTANT FIX: Prevent width overflow */
   box-sizing: border-box;
 }
 
-/* Smooth fade animation */
+/* fade animation */
 @keyframes slideFadeIn {
   from {
     transform: translateY(20px);
@@ -76,9 +62,7 @@ body, html {
 
 
 
-/* =============================== */
 /*              TITLES             */
-/* =============================== */
 
 .auth-title1 {
   color: #2e2b2b;
@@ -91,9 +75,7 @@ body, html {
 }
 
 
-/* =============================== */
 /*             FORM INPUTS         */
-/* =============================== */
 
 .input-group1 {
   margin-bottom: 15px;
@@ -128,9 +110,7 @@ body, html {
 }
 
 
-/* =============================== */
 /*       PASSWORD TOGGLE ICON      */
-/* =============================== */
 
 .password-field1 {
   position: relative;
@@ -150,9 +130,7 @@ body, html {
 }
 
 
-/* =============================== */
 /*       FORGOT PASSWORD LINK      */
-/* =============================== */
 
 .auth-forgot1 {
   text-align: right;
@@ -172,9 +150,7 @@ body, html {
 }
 
 
-/* =============================== */
 /*             BUTTON              */
-/* =============================== */
 
 .auth-btn1 {
   width: 100%;
@@ -199,9 +175,7 @@ body, html {
 }
 
 
-/* =============================== */
 /*          SWITCH TEXT            */
-/* =============================== */
 
 .auth-switch1 {
   margin-top: 20px;
@@ -222,9 +196,7 @@ body, html {
 }
 
 
-/* =============================== */
 /*         RESPONSIVE VIEW         */
-/* =============================== */
 
 @media (max-width: 480px) {
   .auth-card1 {
