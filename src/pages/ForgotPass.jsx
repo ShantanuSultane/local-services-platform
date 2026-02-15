@@ -44,10 +44,9 @@ export default function ForgotPassword() {
 
   return (
     <div className="auth-container1">
-      {/* background overlay */}
       <img
         className="auth-background1"
-        src="/assets/backgrounds/login.png"
+        src="/assets/backgrounds/login12.jpg"
         alt="bg"
       />
 
