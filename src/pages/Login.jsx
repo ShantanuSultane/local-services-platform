@@ -54,7 +54,7 @@ export default function Login() {
 
   return (
     <div className="auth-container">
-      <img className="auth-background" src="../assets/backgrounds/login9.jpg" alt="" />
+      <img className="auth-background" src="../assets/backgrounds/login12.jpg" alt="" />
       <div className="auth-card">
         
         <form className="auth-form" onSubmit={onLogin}>
