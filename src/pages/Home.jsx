@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className="home-advanced">
 
-{/* ---------------- Premium Hero Section 2.0 ---------------- */}
+{/*  Hero Section  */}
 <section className="hero-final2">
 <div className="hero-overlay"></div>
 
@@ -69,7 +69,7 @@ export default function Home() {
     </div>
   </div>
 
-  {/* Right Content — Premium Quick Highlights Section */}
+  {/* Right Content Section */}
 <div className="hero-right-section">
   <h3>Getting Things Done <br />Made Easy</h3>
   <ul>
@@ -87,7 +87,6 @@ export default function Home() {
     </li>
   </ul>
 
-  {/* Functional Explore Button */}
   <Link to="/services" className="cta-btn">
   Explore Services
   </Link>
@@ -95,11 +94,7 @@ export default function Home() {
 </div>
 </section>
 
-
-
-
-
-      {/* ---------------- Curved Feature Section ---------------- */}
+      {/*  Feature Section  */}
 <section className="features">
   <h2 className="section-title-home">All Home Services in One Platform</h2>
 
@@ -142,7 +137,7 @@ export default function Home() {
 
 
 
-{/* ---------------- Trending Categories ---------------- */}
+{/* Trending Categories */}
 <section className="categories-advanced">
   <h2 className="section-title">Trending Home Services</h2>
   <p className="sub">Book our most loved and highly rated services</p>
@@ -187,7 +182,7 @@ export default function Home() {
 
 
 
-{/* ---------------- Popular Services ---------------- */}
+{/* Popular Services */}
 <section className="services-advanced">
   <h2 className="section-title">Popular Services Near You</h2>
   <p className="section-sub">
@@ -210,7 +205,6 @@ export default function Home() {
 
 
 
-{/* ---------------- Testimonial Premium ---------------- */}
 <section className="reviews-advanced">
   <h2 className="section-title">What Customers Say</h2>
   <p className="section-sub">Real experiences from happy customers</p>
@@ -251,7 +245,7 @@ export default function Home() {
 </section>
 
 
-{/* ---------------- App Download CTA - Premium ---------------- */}
+{/* App Download */}
 <section className="download-advanced">
   <div className="download-content">
     <h2>Book Services Faster on the App</h2>
@@ -286,7 +280,7 @@ export default function Home() {
 
   {/* App Image */}
   <div className="download-img">
-    <img src="/assets/phone_app.png" alt="App Preview" />
+    <img src="/assets/pages/phone_app.png" alt="App Preview" />
   </div>
 </section>
 
