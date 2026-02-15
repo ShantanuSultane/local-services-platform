@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
 import "../styles/components/Contact.css";
 
 const Contact = () => {
@@ -11,17 +12,60 @@ const Contact = () => {
     message: "",
   });
 
+  const [successPopup, setSuccessPopup] = useState(false);
+  const [error, setError] = useState("");
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Message sent successfully!");
+    setError("");
+
+    try {
+      await emailjs.send(
+        "service_wk3298j",           // EmailJS service ID
+        "template_3f4b182",          // ADMIN template for contact page
+        formData,                    // All details sent to admin
+        "Ee28i3cP5ZH7GItqT"          // public key
+      );
+
+      setSuccessPopup(true);
+
+      setTimeout(() => {
+        setSuccessPopup(false);
+      }, 3500);
+
+      setFormData({
+        fullname: "",
+        company: "",
+        email: "",
+        phone: "",
+        address: "",
+        message: "",
+      });
+
+    } catch (err) {
+      console.error(err);
+      setError("❌ Failed to send message. Please try again.");
+    }
   };
 
   return (
     <div className="contact-wrapper">
+
+      {/* SUCCESS POPUP */}
+      {successPopup && (
+        <div className="contact-popup">
+          <div className="contact-popup-box">
+            <h2>🎉 Message Sent!</h2>
+            <p>Thank you for contacting us.</p>
+            <p>Our team will get back to you shortly.</p>
+          </div>
+        </div>
+      )}
+
       <div className="contact-left">
         <h1>Contact Us</h1>
         <p>
@@ -91,7 +135,6 @@ const Contact = () => {
                   <option>UK</option>
                   <option>Aus</option>
                   <option>Afg</option>
-                  
                 </select>
                 <input
                   type="text"
