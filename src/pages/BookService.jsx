@@ -32,32 +32,39 @@ export default function BookService({ addBooking }) {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleBooking = () => {
-    if (!form.fullname || !form.mobile || !form.email || !form.address || !form.date) {
-      alert("Please fill all required fields before booking.");
+  const handleBooking = (e) => {
+    e.preventDefault();
+  
+    const user = JSON.parse(localStorage.getItem("loggedInUser"));
+  
+    // If user NOT logged in → STOP & redirect
+    if (!user) {
+      navigate("/login", { replace: true });
       return;
     }
-
+  
+    // User is logged in → Allow booking
     const newBooking = {
-      id: Date.now(),
-      serviceName: service.title,
-      serviceId: service.id,
-      price: totalPrice,
-      date: form.date,
-      time: form.time,
-      pro: "Assigned Professional",
-      status: "Upcoming",
-    };
-
+          id: Date.now(),
+          serviceName: service.title,
+          serviceId: service.id,
+          price: totalPrice,
+          date: form.date,
+          time: form.time,
+          pro: "Assigned Professional",
+          status: "Upcoming",
+        };
+  
     addBooking(newBooking);
-
+  
     setPopup(true);
 
     setTimeout(() => {
       navigate("/bookings");
     }, 1500);
   };
-
+ 
+  
   return (
     <div className="book-page">
       {popup && (
@@ -125,7 +132,6 @@ export default function BookService({ addBooking }) {
             <textarea name="instructions" value={form.instructions} placeholder="Write any special request (optional)" onChange={handleChange}></textarea>
           </div>
 
-          {/* ✅ FIXED */}
             <button type="button" className="confirm-booking-btn" onClick={handleBooking}>
               Confirm Booking
             </button>
