@@ -1,4 +1,3 @@
-/* GLOBAL RESETS */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +6,7 @@
 }
 
 body {
-  padding-top: 90px;  /* Same height as navbar */
+  padding-top: 90px;
   background: #f8f9fa;
   color: #333;
 }
@@ -18,7 +17,6 @@ body {
   min-height: 80vh;
 }
 
-/* PAGE DEFAULT */
 .page {
   padding: 20px 0;
 }
