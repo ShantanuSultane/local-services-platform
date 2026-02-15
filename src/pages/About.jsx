@@ -6,7 +6,7 @@ export default function About() {
   return (
     <div className="about-wrapper">
 
-      {/* ========== HERO ========== */}
+      {/*  HERO  */}
       <section className="about-hero">
         <div className="hero-text">
           <h1 className="fade-up">Premium Home Services Delivered With Trust</h1>
@@ -19,13 +19,9 @@ export default function About() {
             <Link to="/services" className="btn-primary1">Explore Services</Link>
           </div>
         </div>
-
-        {/* <div className="hero-image fade-up delay-3">
-          <img src="/assets/hero-illustrate2.jpg" alt="Services" />
-        </div> */}
       </section>
 
-      {/* ========== ABOUT ========== */}
+      {/* ABOUT */}
       <section className="about-core fade-up">
         <h2 className="h2font">Who We Are..?</h2>
         <p>
@@ -36,7 +32,7 @@ export default function About() {
         </p>
       </section>
 
-      {/* ========== VALUES (New & Professional) ========== */}
+      {/*  VALUES (New & Professional) */}
       <section className="values-section fade-up delay-1">
         <h2 className="h2font1">Our Core Values..!</h2>
         <div className="values-grid">
@@ -62,7 +58,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ========== WHY CHOOSE US ========== */}
+      {/*  WHY CHOOSE US  */}
       <section className="why-us fade-up">
         <h2 className="h2font1">Why Customers Prefer LocalServices ? </h2>
         <div className="why-grid">
@@ -77,7 +73,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ========== STATS ========== */}
+      {/*  STATS  */}
       <section className="stats-section fade-up delay-1">
         <div className="stat-card">
           <h3>2,500+</h3>
@@ -97,7 +93,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* ========== CTA ========== */}
+      {/*  CTA  */}
       <section className="cta fade-up">
         <h2>Experience Hassle-Free Home Services</h2>
         <p>Book professionals who deliver quality, speed and trust.</p>
