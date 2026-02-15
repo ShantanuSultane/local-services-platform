@@ -103,6 +103,15 @@ export default function Register() {
   };
 
   return (
+  <div className="reg-wrapper">
+
+    {/* background image */}
+      <img
+        className="reg-background"
+        src="/assets/backgrounds/login12.jpg"
+        alt="bg"
+      />
+
     <div className="reg-wrapper">
       <div className="reg-card">
 
@@ -116,7 +125,6 @@ export default function Register() {
         </div>
 
         <div className="reg-content">
-          {/* Anti-Autofill Hidden Fields */}
           <input type="text" name="fakeuser" autoComplete="off" style={{display:"none"}} />
           <input type="password" name="fakepass" autoComplete="new-password" style={{display:"none"}} />
 
@@ -129,7 +137,6 @@ export default function Register() {
                 name="fullname"
                 value={form.fullname}
                 onChange={handleChange}
-                // autoComplete="off"
                 required
               />
             </div>
@@ -141,7 +148,6 @@ export default function Register() {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
-                // autoComplete="off"
                 required
               />
             </div>
@@ -153,7 +159,6 @@ export default function Register() {
                 name="username"
                 value={form.username}
                 onChange={handleChange}
-                // autoComplete="off"
                 required
               />
             </div>
@@ -198,5 +203,6 @@ export default function Register() {
         </div>
       </div>
     </div>
+  </div>
   );
 }
