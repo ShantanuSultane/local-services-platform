@@ -11,7 +11,6 @@ export default function Footer() {
 
         {/* Brand */}
         <div className="footer-about">
-          {/* <h2 className="footer-logo">LocalServices</h2> */}
           <h2 className="footer-logo">Local<span>Services</span></h2>
           <p>
             Your trusted platform for booking professional home services — 
@@ -32,20 +31,20 @@ export default function Footer() {
           <Link to="/about">About Us</Link>
           <Link to="/services">All Services</Link>
           <Link to="/contact">Contact</Link>
-          <Link to="/faq">FAQ</Link>
-          <Link to="/privacy">Privacy Policy</Link>
-          <Link to="/terms">Terms & Conditions</Link>
+          <Link to="/">FAQ</Link>
+          <Link to="/">Privacy Policy</Link>
+          <Link to="/">Terms & Conditions</Link>
         </div>
 
         {/* Popular Services */}
         <div className="footer-links">
           <h3>Popular Services</h3>
-          <Link>Deep Home Cleaning</Link>
-          <Link>AC Repair & Services</Link>
-          <Link>Electrician Services</Link>
-          <Link>Plumbing & Fittings</Link>
-          <Link>Salon at Home</Link>
-          <Link>Pest Control</Link>
+          <Link to="/services">Deep Home Cleaning</Link>
+          <Link to="/services">AC Repair & Services</Link>
+          <Link to="/services">Electrician Services</Link>
+          <Link to="/services">Plumbing & Fittings</Link>
+          <Link to="/services">Salon at Home</Link>
+          <Link to="/services">Pest Control</Link>
         </div>
 
         {/* Contact Details */}
@@ -56,8 +55,7 @@ export default function Footer() {
           <p>📧 support@localservices.com</p>
 
           <div className="footer-apps">
-            <img  className="appstore" src="/assets/appstore3.png" alt="App Store" />
-            <img src="/assets/playstore.png" alt="Google Play" />
+            <img src="/assets/playstore1.png" alt="Google Play" />
           </div>
         </div>
       </div>
